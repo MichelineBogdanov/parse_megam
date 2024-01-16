@@ -1,2 +1,4 @@
-package ru.bogdanov.view;public class TxtFileView {
+package ru.bogdanov.view;
+
+public class TxtFileView {
 }

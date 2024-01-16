@@ -1,2 +1,4 @@
-package ru.bogdanov.config;public class Config {
+package ru.bogdanov.config;
+
+public class Config {
 }

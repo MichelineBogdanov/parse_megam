@@ -1,2 +1,4 @@
-package ru.bogdanov.services;public class BestSalesService {
+package ru.bogdanov.services;
+
+public class BestSalesService {
 }

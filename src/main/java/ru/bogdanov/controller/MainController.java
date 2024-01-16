@@ -1,2 +1,4 @@
-package ru.bogdanov.controller;public class MainController {
+package ru.bogdanov.controller;
+
+public class MainController {
 }

@@ -1,2 +1,4 @@
-package ru.bogdanov.entity;public class Item {
+package ru.bogdanov.entity;
+
+public class Item {
 }
