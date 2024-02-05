@@ -10,8 +10,15 @@ import ru.bogdanov.entity.Item;
 import ru.bogdanov.entity.Root;
 
 import javax.swing.*;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
+import javax.swing.event.TableModelEvent;
+import javax.swing.event.TableModelListener;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.net.URI;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Optional;
@@ -47,9 +54,51 @@ public class App extends JFrame {
             add("Название");
             add("Цена");
             add("Скидка");
-            add("Ссылка");
+            add("URL");
         }};
-        resultTable.setModel(new DefaultTableModel(header, 50));
+        DefaultTableModel dataModel = new DefaultTableModel(header, 50);
+
+        URLCellRenderer renderer = new URLCellRenderer();
+        resultTable.setDefaultRenderer(URLCellRenderer.class, renderer);
+
+        resultTable.addMouseListener(new MouseListener() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                JTable source = (JTable) e.getSource();
+                int row = source.getSelectedRow();
+                int col = source.getSelectedColumn();
+                Object valueAt = source.getValueAt(row, col);
+                try {
+                    if (Desktop.isDesktopSupported()) { // JDK 1.6.0
+                        Desktop.getDesktop().browse(new URI(valueAt.toString()));
+                    }
+                } catch (Exception ex) {
+                    ex.printStackTrace();
+                }
+            }
+
+            @Override
+            public void mousePressed(MouseEvent e) {
+
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent e) {
+
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent e) {
+
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+
+            }
+        });
+
+        resultTable.setModel(dataModel);
     }
 
     private void onStart() {
@@ -87,10 +136,11 @@ public class App extends JFrame {
         Root root = gson.fromJson(json, Root.class);
         ArrayList<Item> items = root.items;
         DefaultTableModel model = (DefaultTableModel) resultTable.getModel();
-        for (int i = 0; i < items.size(); i++) {
-            Item item = items.get(i);
-            model.insertRow(0, new Object[]{item.goods.title, item.price, item.bonusAmount, item.rating});
-            resultTable.repaint();
+        for (Item item : items) {
+            if (item.bonusAmount > 0) {
+                model.insertRow(0, new Object[]{item.goods.title, item.price, item.bonusPercent, item.goods.webUrl});
+                resultTable.repaint();
+            }
         }
         System.out.println(items);
         return null;
