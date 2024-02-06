@@ -6,14 +6,10 @@ import org.openqa.selenium.devtools.DevTools;
 import org.openqa.selenium.devtools.v120.network.Network;
 import org.openqa.selenium.devtools.v120.network.model.Request;
 import org.openqa.selenium.devtools.v120.network.model.Response;
-import ru.bogdanov.entity.Item;
-import ru.bogdanov.entity.Root;
+import ru.bogdanov.entity.megam_beans.Item;
+import ru.bogdanov.entity.megam_beans.Root;
 
 import javax.swing.*;
-import javax.swing.event.ListSelectionEvent;
-import javax.swing.event.ListSelectionListener;
-import javax.swing.event.TableModelEvent;
-import javax.swing.event.TableModelListener;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.awt.event.MouseEvent;
@@ -34,6 +30,7 @@ public class App extends JFrame {
     private JScrollPane tableScroll;
     private JButton startBtn;
     private JButton exportBtn;
+    private JButton stopBtn;
 
     public static void main(String[] args) {
         App app = new App();
@@ -45,8 +42,13 @@ public class App extends JFrame {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setSize(new Dimension(800, 500));
         startBtn.addActionListener(e -> onStart());
+        stopBtn.addActionListener(e -> onStop());
         initTable();
         setVisible(true);
+    }
+
+    private void onStop() {
+        System.out.println("Stop!");
     }
 
     private void initTable() {
@@ -56,10 +58,11 @@ public class App extends JFrame {
             add("Скидка");
             add("URL");
         }};
-        DefaultTableModel dataModel = new DefaultTableModel(header, 50);
+        DataTableModel myTableModel = new DataTableModel(header, 50);
 
         URLCellRenderer renderer = new URLCellRenderer();
         resultTable.setDefaultRenderer(URLCellRenderer.class, renderer);
+
 
         resultTable.addMouseListener(new MouseListener() {
             @Override
@@ -98,7 +101,7 @@ public class App extends JFrame {
             }
         });
 
-        resultTable.setModel(dataModel);
+        resultTable.setModel(myTableModel);
     }
 
     private void onStart() {
@@ -134,11 +137,11 @@ public class App extends JFrame {
     public Vector getData(String json) {
         Gson gson = new Gson();
         Root root = gson.fromJson(json, Root.class);
-        ArrayList<Item> items = root.items;
+        ArrayList<Item> items = root.getItems();
         DefaultTableModel model = (DefaultTableModel) resultTable.getModel();
         for (Item item : items) {
-            if (item.bonusAmount > 0) {
-                model.insertRow(0, new Object[]{item.goods.title, item.price, item.bonusPercent, item.goods.webUrl});
+            if (item.getBonusAmount() > 0) {
+                model.insertRow(0, new Object[]{item.getGoods().getTitle(), item.getPrice(), item.getBonusPercent(), item.getGoods().getWebUrl()});
                 resultTable.repaint();
             }
         }
