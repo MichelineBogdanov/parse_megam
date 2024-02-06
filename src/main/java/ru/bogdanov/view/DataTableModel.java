@@ -10,6 +10,14 @@ public class DataTableModel extends DefaultTableModel {
     }
 
     @Override
+    public Class<?> getColumnClass(int columnIndex) {
+        if (columnIndex == 3) {
+            return String.class;
+        }
+        return Object.class;
+    }
+
+    @Override
     public String getColumnName(int column) {
         return super.getColumnName(column);
     }

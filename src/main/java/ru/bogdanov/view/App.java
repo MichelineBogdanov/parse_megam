@@ -58,10 +58,10 @@ public class App extends JFrame {
             add("Скидка");
             add("URL");
         }};
-        DataTableModel myTableModel = new DataTableModel(header, 50);
+        DataTableModel myTableModel = new DataTableModel(header, 1);
 
         URLCellRenderer renderer = new URLCellRenderer();
-        resultTable.setDefaultRenderer(URLCellRenderer.class, renderer);
+        resultTable.setDefaultRenderer(String.class, renderer);
 
 
         resultTable.addMouseListener(new MouseListener() {
@@ -102,6 +102,7 @@ public class App extends JFrame {
         });
 
         resultTable.setModel(myTableModel);
+        myTableModel.insertRow(0, new String[]{"item.getGoods().getTitle()", "item.getPrice()", "item.getBonusPercent()", "item.getGoods().getWebUrl()"});
     }
 
     private void onStart() {
