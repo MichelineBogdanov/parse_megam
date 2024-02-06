@@ -1,14 +1,13 @@
-package ru.bogdanov.entity;
+package ru.bogdanov.entity.megam_beans;
 
 import java.util.ArrayList;
 
-public class FavoriteOffer {
+public class FavoriteOffer extends MegaMBean {
     public String id;
     public int price;
     public int score;
     public boolean isFavorite;
     public String merchantId;
-    public ArrayList<DeliveryPossibility> deliveryPossibilities;
     public int finalPrice;
     public int bonusPercent;
     public int bonusAmount;

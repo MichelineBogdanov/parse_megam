@@ -4,10 +4,33 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="82fa0751-e309-474c-9184-102756ecb646" name="Changes" comment="Interface&#10;[+] - добавил POJO для парсинга&#10;[!] - распарсил json на объекты java, сделал добавление данных в интерфейс">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/bogdanov/view/URLCellRenderer.java" afterDir="false" />
+    <list default="true" id="82fa0751-e309-474c-9184-102756ecb646" name="Changes" comment="Logic&#10;[+] - добавил слушатель на ссылку, теперь открывается в браузере">
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/bogdanov/entity/AbstractBean.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/bogdanov/entity/megam_beans/MegaMBean.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/bogdanov/view/DataTableModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/free-icon-stop-button-2391033 (1).png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/free-icon-stop-button-2391033.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/bogdanov/entity/Attribute.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/bogdanov/entity/Box.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/bogdanov/entity/ChildCollection.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/bogdanov/entity/Collection.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/bogdanov/entity/CollectionSelector.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/bogdanov/entity/DeliveryPossibility.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/bogdanov/entity/FavoriteOffer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/bogdanov/entity/megam_beans/FavoriteOffer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/bogdanov/entity/Goods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/bogdanov/entity/megam_beans/Goods.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/bogdanov/entity/Group.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/bogdanov/entity/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/bogdanov/entity/megam_beans/Item.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/bogdanov/entity/Meta.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/bogdanov/entity/Navigation.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/bogdanov/entity/Package.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/bogdanov/entity/Processor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/bogdanov/entity/Root.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/bogdanov/entity/megam_beans/Root.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/bogdanov/entity/Sorting.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/bogdanov/view/App.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/bogdanov/view/App.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/bogdanov/view/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/bogdanov/view/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/bogdanov/view/TxtFileView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/bogdanov/view/ExcelImporter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/bogdanov/view/URLCellRenderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/bogdanov/view/URLCellRenderer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -146,7 +169,15 @@
       <option name="project" value="LOCAL" />
       <updated>1707058112127</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Logic&#10;[+] - добавил слушатель на ссылку, теперь открывается в браузере">
+      <option name="closed" value="true" />
+      <created>1707171572271</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1707171572271</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -164,20 +195,16 @@
     <MESSAGE value="push code commit" />
     <MESSAGE value="Interface&#10;[+] - add user form" />
     <MESSAGE value="Interface&#10;[+] - добавил POJO для парсинга&#10;[!] - распарсил json на объекты java, сделал добавление данных в интерфейс" />
-    <option name="LAST_COMMIT_MESSAGE" value="Interface&#10;[+] - добавил POJO для парсинга&#10;[!] - распарсил json на объекты java, сделал добавление данных в интерфейс" />
+    <MESSAGE value="Logic&#10;[+] - добавил слушатель на ссылку, теперь открывается в браузере" />
+    <option name="LAST_COMMIT_MESSAGE" value="Logic&#10;[+] - добавил слушатель на ссылку, теперь открывается в браузере" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/ru/bogdanov/view/URLCellRenderer.java</url>
-          <line>25</line>
+          <line>23</line>
           <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/ru/bogdanov/view/App.java</url>
-          <line>51</line>
-          <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

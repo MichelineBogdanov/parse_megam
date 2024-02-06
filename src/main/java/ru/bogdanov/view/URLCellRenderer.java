@@ -1,12 +1,10 @@
 package ru.bogdanov.view;
 
 import javax.swing.table.DefaultTableCellRenderer;
-import javax.swing.table.DefaultTableColumnModel;
 import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.net.URI;
-import java.net.URL;
 
 public class URLCellRenderer extends DefaultTableCellRenderer implements MouseListener {
 
