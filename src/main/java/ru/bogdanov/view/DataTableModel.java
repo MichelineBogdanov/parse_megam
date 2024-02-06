@@ -1,6 +1,7 @@
 package ru.bogdanov.view;
 
 import javax.swing.table.DefaultTableModel;
+import java.net.URI;
 import java.util.Vector;
 
 public class DataTableModel extends DefaultTableModel {
@@ -11,10 +12,10 @@ public class DataTableModel extends DefaultTableModel {
 
     @Override
     public Class<?> getColumnClass(int columnIndex) {
-        if (columnIndex == 3) {
-            return String.class;
+        if ("URI".equals(getColumnName(columnIndex))) {
+            return URI.class;
         }
-        return Object.class;
+        return String.class;
     }
 
     @Override

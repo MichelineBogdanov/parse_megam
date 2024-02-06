@@ -56,12 +56,12 @@ public class App extends JFrame {
             add("Название");
             add("Цена");
             add("Скидка");
-            add("URL");
+            add("URI");
         }};
         DataTableModel myTableModel = new DataTableModel(header, 1);
 
         URLCellRenderer renderer = new URLCellRenderer();
-        resultTable.setDefaultRenderer(String.class, renderer);
+        resultTable.setDefaultRenderer(URI.class, renderer);
 
 
         resultTable.addMouseListener(new MouseListener() {
@@ -70,10 +70,13 @@ public class App extends JFrame {
                 JTable source = (JTable) e.getSource();
                 int row = source.getSelectedRow();
                 int col = source.getSelectedColumn();
-                Object valueAt = source.getValueAt(row, col);
+                if (!source.getColumnName(col).equals("URI")) {
+                    return;
+                }
+                URI valueAt = (URI) source.getValueAt(row, col);
                 try {
                     if (Desktop.isDesktopSupported()) { // JDK 1.6.0
-                        Desktop.getDesktop().browse(new URI(valueAt.toString()));
+                        Desktop.getDesktop().browse(valueAt);
                     }
                 } catch (Exception ex) {
                     ex.printStackTrace();
