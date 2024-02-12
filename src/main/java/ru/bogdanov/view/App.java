@@ -12,8 +12,8 @@ import ru.bogdanov.entity.megam_beans.Root;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
+import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
 import java.net.URI;
 import java.time.Duration;
 import java.util.ArrayList;
@@ -31,6 +31,8 @@ public class App extends JFrame {
     private JButton startBtn;
     private JButton exportBtn;
     private JButton stopBtn;
+    private JLabel saleLbl;
+    private JTextField saleTF;
 
     public static void main(String[] args) {
         App app = new App();
@@ -60,52 +62,34 @@ public class App extends JFrame {
         }};
         DataTableModel myTableModel = new DataTableModel(header, 1);
 
-        URLCellRenderer renderer = new URLCellRenderer();
+        URICellRenderer renderer = new URICellRenderer();
         resultTable.setDefaultRenderer(URI.class, renderer);
 
-
-        resultTable.addMouseListener(new MouseListener() {
+        resultTable.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
                 JTable source = (JTable) e.getSource();
                 int row = source.getSelectedRow();
                 int col = source.getSelectedColumn();
-                if (!source.getColumnName(col).equals("URI")) {
-                    return;
-                }
-                URI valueAt = (URI) source.getValueAt(row, col);
-                try {
-                    if (Desktop.isDesktopSupported()) { // JDK 1.6.0
-                        Desktop.getDesktop().browse(valueAt);
+                if (source.getValueAt(row, col) instanceof URI valueAt) {
+                    try {
+                        if (Desktop.isDesktopSupported()) {
+                            Desktop.getDesktop().browse(valueAt);
+                        }
+                    } catch (Exception ex) {
+                        ex.printStackTrace();
                     }
-                } catch (Exception ex) {
-                    ex.printStackTrace();
                 }
-            }
-
-            @Override
-            public void mousePressed(MouseEvent e) {
 
             }
 
-            @Override
-            public void mouseReleased(MouseEvent e) {
-
-            }
-
-            @Override
-            public void mouseEntered(MouseEvent e) {
-
-            }
-
-            @Override
-            public void mouseExited(MouseEvent e) {
-
-            }
         });
 
         resultTable.setModel(myTableModel);
-        myTableModel.insertRow(0, new String[]{"item.getGoods().getTitle()", "item.getPrice()", "item.getBonusPercent()", "item.getGoods().getWebUrl()"});
+        myTableModel.insertRow(0, new String[]{"item.getGoods().getTitle()"
+                , "item.getPrice()"
+                , "item.getBonusPercent()"
+                , "https://megamarket.ru/catalog/igrovye-videokarty/"});
     }
 
     private void onStart() {
@@ -126,9 +110,6 @@ public class App extends JFrame {
                 System.out.println(body);
                 System.out.println("!!!!!!!!!!!!!!!!!!!!!!");
                 getData(body);
-                //DefaultTableModel model = (DefaultTableModel) resultTable.getModel();
-                //model.insertRow(0, new Object[]{"WordPress", "Easy", "qw", "qw", "wq"});
-                //resultTable.repaint();
             }
 
         });
@@ -144,7 +125,7 @@ public class App extends JFrame {
         ArrayList<Item> items = root.getItems();
         DefaultTableModel model = (DefaultTableModel) resultTable.getModel();
         for (Item item : items) {
-            if (item.getBonusAmount() > 0) {
+            if (item.getBonusPercent() > Integer.parseInt(saleTF.getText() == null ? "0" : saleTF.getText())) {
                 model.insertRow(0, new Object[]{item.getGoods().getTitle(), item.getPrice(), item.getBonusPercent(), item.getGoods().getWebUrl()});
                 resultTable.repaint();
             }

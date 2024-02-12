@@ -1,15 +1,22 @@
 package ru.bogdanov.entity.megam_beans;
 
+import java.net.URI;
+import java.net.URISyntaxException;
+
 public class Goods extends MegaMBean {
     private String goodsId;
     private String title;
-    private String webUrl;
+    private URI webUrl;
     private String brand;
 
     public Goods(String goodsId, String title, String webUrl, String brand) {
         this.goodsId = goodsId;
         this.title = title;
-        this.webUrl = webUrl;
+        try {
+            this.webUrl = new URI(webUrl);
+        } catch (URISyntaxException e) {
+            throw new RuntimeException(e);
+        }
         this.brand = brand;
     }
 
@@ -29,12 +36,16 @@ public class Goods extends MegaMBean {
         this.title = title;
     }
 
-    public String getWebUrl() {
+    public URI getWebUrl() {
         return webUrl;
     }
 
     public void setWebUrl(String webUrl) {
-        this.webUrl = webUrl;
+        try {
+            this.webUrl = new URI(webUrl);
+        } catch (URISyntaxException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public String getBrand() {

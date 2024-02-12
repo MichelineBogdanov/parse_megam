@@ -4,9 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="82fa0751-e309-474c-9184-102756ecb646" name="Changes" comment="Interface&#10;[!] - добавил заготовку для рендерера ячейки">
+    <list default="true" id="82fa0751-e309-474c-9184-102756ecb646" name="Changes" comment="Interface&#10;[!] - добавил каст к URI в соответствующем столбце">
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/bogdanov/view/DataTable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/bogdanov/entity/megam_beans/Goods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/bogdanov/entity/megam_beans/Goods.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/bogdanov/view/App.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/bogdanov/view/App.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/bogdanov/view/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/bogdanov/view/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/bogdanov/view/DataTableModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/bogdanov/view/DataTableModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/bogdanov/view/URLCellRenderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/bogdanov/view/URICellRenderer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,6 +42,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH&quot;: &quot;470&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/qqMik/IdeaProjects/parse_megam/src/main/resources&quot;,
     &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/qqMik/IdeaProjects/parse_megam/src/main/java/ru/bogdanov/Main.java&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
@@ -51,8 +56,8 @@
       <recent name="C:\Users\qqMik\IdeaProjects\parse_megam\src\main\resources" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.App (1)">
-    <configuration name="App (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Application.App">
+    <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ru.bogdanov.view.App" />
       <module name="parse_megam" />
       <extension name="coverage">
@@ -91,8 +96,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="URLCellRenderer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ru.bogdanov.view.URLCellRenderer" />
+    <configuration name="URICellRenderer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ru.bogdanov.view.URICellRenderer" />
       <module name="parse_megam" />
       <extension name="coverage">
         <pattern>
@@ -118,9 +123,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.App (1)" />
         <item itemvalue="Application.App" />
-        <item itemvalue="Application.URLCellRenderer" />
+        <item itemvalue="Application.URICellRenderer" />
         <item itemvalue="Application.Main" />
         <item itemvalue="TestNG.TestM.testScrapingEcommerce" />
       </list>
@@ -191,7 +195,15 @@
       <option name="project" value="LOCAL" />
       <updated>1707253244916</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Interface&#10;[!] - добавил каст к URI в соответствующем столбце">
+      <option name="closed" value="true" />
+      <created>1707253878578</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1707253878578</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -213,15 +225,26 @@
     <MESSAGE value="Interface&#10;[+] - добавил кнопку &quot;стоп&quot;" />
     <MESSAGE value="Logic&#10;[+]/[-]/[!] - добавил классы для работы с таблицей, убрал лишние bean-ы" />
     <MESSAGE value="Interface&#10;[!] - добавил заготовку для рендерера ячейки" />
-    <option name="LAST_COMMIT_MESSAGE" value="Interface&#10;[!] - добавил заготовку для рендерера ячейки" />
+    <MESSAGE value="Interface&#10;[!] - добавил каст к URI в соответствующем столбце" />
+    <option name="LAST_COMMIT_MESSAGE" value="Interface&#10;[!] - добавил каст к URI в соответствующем столбце" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/ru/bogdanov/view/URLCellRenderer.java</url>
-          <line>21</line>
-          <option name="timeStamp" value="3" />
+          <url>file://$PROJECT_DIR$/src/main/java/ru/bogdanov/entity/megam_beans/Goods.java</url>
+          <line>12</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/ru/bogdanov/view/URICellRenderer.java</url>
+          <line>8</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/ru/bogdanov/view/App.java</url>
+          <line>127</line>
+          <option name="timeStamp" value="8" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
