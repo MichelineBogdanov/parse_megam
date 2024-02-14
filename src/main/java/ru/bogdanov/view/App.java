@@ -12,13 +12,9 @@ import ru.bogdanov.entity.megam_beans.Root;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.net.URI;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Optional;
-import java.util.Vector;
 
 public class App extends JFrame {
     private JPanel parent;
@@ -40,56 +36,16 @@ public class App extends JFrame {
 
     public App() {
         setContentPane(parent);
-        setTitle("Test");
+        setTitle("Megamarket parser");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setSize(new Dimension(800, 500));
         startBtn.addActionListener(e -> onStart());
         stopBtn.addActionListener(e -> onStop());
-        initTable();
         setVisible(true);
     }
 
     private void onStop() {
         System.out.println("Stop!");
-    }
-
-    private void initTable() {
-        Vector<String> header = new Vector<>() {{
-            add("Название");
-            add("Цена");
-            add("Скидка");
-            add("URI");
-        }};
-        DataTableModel myTableModel = new DataTableModel(header, 1);
-
-        URICellRenderer renderer = new URICellRenderer();
-        resultTable.setDefaultRenderer(URI.class, renderer);
-
-        resultTable.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseClicked(MouseEvent e) {
-                JTable source = (JTable) e.getSource();
-                int row = source.getSelectedRow();
-                int col = source.getSelectedColumn();
-                if (source.getValueAt(row, col) instanceof URI valueAt) {
-                    try {
-                        if (Desktop.isDesktopSupported()) {
-                            Desktop.getDesktop().browse(valueAt);
-                        }
-                    } catch (Exception ex) {
-                        ex.printStackTrace();
-                    }
-                }
-
-            }
-
-        });
-
-        resultTable.setModel(myTableModel);
-        myTableModel.insertRow(0, new String[]{"item.getGoods().getTitle()"
-                , "item.getPrice()"
-                , "item.getBonusPercent()"
-                , "https://megamarket.ru/catalog/igrovye-videokarty/"});
     }
 
     private void onStart() {
@@ -109,7 +65,7 @@ public class App extends JFrame {
                 String body = devTools.send(Network.getResponseBody(responseReceived.getRequestId())).getBody();
                 System.out.println(body);
                 System.out.println("!!!!!!!!!!!!!!!!!!!!!!");
-                getData(body);
+                putData(body);
             }
 
         });
@@ -119,19 +75,21 @@ public class App extends JFrame {
         System.out.println(pageSource);
     }
 
-    public Vector getData(String json) {
+    public void putData(String json) {
         Gson gson = new Gson();
         Root root = gson.fromJson(json, Root.class);
         ArrayList<Item> items = root.getItems();
         DefaultTableModel model = (DefaultTableModel) resultTable.getModel();
         for (Item item : items) {
             if (item.getBonusPercent() > Integer.parseInt(saleTF.getText() == null ? "0" : saleTF.getText())) {
-                model.insertRow(0, new Object[]{item.getGoods().getTitle(), item.getPrice(), item.getBonusPercent(), item.getGoods().getWebUrl()});
+                model.addRow(new Object[]{item.getGoods().getTitle(), item.getPrice(), item.getBonusPercent(), item.getGoods().getWebUrl()});
                 resultTable.repaint();
             }
         }
-        System.out.println(items);
-        return null;
     }
 
+    private void createUIComponents() {
+        resultTable = new DataTable();
+        // TODO: place custom component creation code here
+    }
 }

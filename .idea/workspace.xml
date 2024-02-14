@@ -4,13 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="82fa0751-e309-474c-9184-102756ecb646" name="Changes" comment="Interface&#10;[!] - добавил каст к URI в соответствующем столбце">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/bogdanov/view/DataTable.java" afterDir="false" />
+    <list default="true" id="82fa0751-e309-474c-9184-102756ecb646" name="Changes" comment="Interface/Logic&#10;[!] - добавил поле для ввода размера скидки&#10;[+] - добавил кастомный класс для таблицы&#10;[!] - прописал каст к URI в ентити для товара">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/bogdanov/entity/megam_beans/Goods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/bogdanov/entity/megam_beans/Goods.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/bogdanov/view/App.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/bogdanov/view/App.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/bogdanov/view/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/bogdanov/view/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/bogdanov/view/URLCellRenderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/bogdanov/view/URICellRenderer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/bogdanov/view/DataTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/bogdanov/view/DataTable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/bogdanov/view/DataTableModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/bogdanov/view/DataTableModel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -203,7 +202,15 @@
       <option name="project" value="LOCAL" />
       <updated>1707253878578</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Interface/Logic&#10;[!] - добавил поле для ввода размера скидки&#10;[+] - добавил кастомный класс для таблицы&#10;[!] - прописал каст к URI в ентити для товара">
+      <option name="closed" value="true" />
+      <created>1707771153394</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1707771153394</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -226,7 +233,8 @@
     <MESSAGE value="Logic&#10;[+]/[-]/[!] - добавил классы для работы с таблицей, убрал лишние bean-ы" />
     <MESSAGE value="Interface&#10;[!] - добавил заготовку для рендерера ячейки" />
     <MESSAGE value="Interface&#10;[!] - добавил каст к URI в соответствующем столбце" />
-    <option name="LAST_COMMIT_MESSAGE" value="Interface&#10;[!] - добавил каст к URI в соответствующем столбце" />
+    <MESSAGE value="Interface/Logic&#10;[!] - добавил поле для ввода размера скидки&#10;[+] - добавил кастомный класс для таблицы&#10;[!] - прописал каст к URI в ентити для товара" />
+    <option name="LAST_COMMIT_MESSAGE" value="Interface/Logic&#10;[!] - добавил поле для ввода размера скидки&#10;[+] - добавил кастомный класс для таблицы&#10;[!] - прописал каст к URI в ентити для товара" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -237,13 +245,8 @@
           <option name="timeStamp" value="6" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/ru/bogdanov/view/URICellRenderer.java</url>
-          <line>8</line>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/ru/bogdanov/view/App.java</url>
-          <line>127</line>
+          <line>125</line>
           <option name="timeStamp" value="8" />
         </line-breakpoint>
       </breakpoints>
