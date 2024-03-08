@@ -1,14 +1,23 @@
 package ru.bogdanov.view;
 
 import com.google.gson.Gson;
+import org.apache.commons.exec.util.StringUtils;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.devtools.DevTools;
 import org.openqa.selenium.devtools.v120.network.Network;
 import org.openqa.selenium.devtools.v120.network.model.Request;
 import org.openqa.selenium.devtools.v120.network.model.Response;
+import org.openqa.selenium.support.locators.RelativeLocator;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Wait;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import ru.bogdanov.entity.megam_beans.Item;
 import ru.bogdanov.entity.megam_beans.Root;
 
+import javax.lang.model.element.Element;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
@@ -72,6 +81,10 @@ public class App extends JFrame {
         });
         driver.get(url);
         driver.manage().timeouts().implicitlyWait(Duration.ofMillis(30000));
+        Wait<WebDriver> wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+        wait.until(ExpectedConditions.elementToBeClickable(By.className("header-region-selector-view__footer-ok"))).click();
+        JavascriptExecutor jse = driver;
+        jse.executeScript("window.scrollBy(0,document.body.scrollHeight)");
         String pageSource = driver.getPageSource();
         System.out.println(pageSource);
     }
@@ -82,7 +95,7 @@ public class App extends JFrame {
         ArrayList<Item> items = root.getItems();
         DefaultTableModel model = (DefaultTableModel) resultTable.getModel();
         for (Item item : items) {
-            if (item.getBonusPercent() > Integer.parseInt(saleTF.getText() == null ? "0" : saleTF.getText())) {
+            if (item.getBonusPercent() > Integer.parseInt(saleTF.getText() == null || saleTF.getText().isEmpty() ? "0" : saleTF.getText())) {
                 model.addRow(new Object[]{item.getGoods().getTitle(), item.getPrice(), item.getBonusPercent(), item.getGoods().getWebUrl()});
                 resultTable.repaint();
             }
