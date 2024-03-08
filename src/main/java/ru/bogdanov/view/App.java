@@ -29,6 +29,7 @@ public class App extends JFrame {
     private JButton stopBtn;
     private JLabel saleLbl;
     private JTextField saleTF;
+    private JButton scheduleBtn;
 
     public static void main(String[] args) {
         App app = new App();
@@ -86,6 +87,10 @@ public class App extends JFrame {
                 resultTable.repaint();
             }
         }
+    }
+
+    private void rollPage() {
+
     }
 
     private void createUIComponents() {

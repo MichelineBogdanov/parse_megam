@@ -1,5 +1,7 @@
 package ru.bogdanov.view;
 
+import ru.bogdanov.entity.megam_beans.Item;
+
 import javax.swing.*;
 import javax.swing.table.TableRowSorter;
 import java.awt.*;

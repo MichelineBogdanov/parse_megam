@@ -36,6 +36,21 @@
               <text value=""/>
             </properties>
           </component>
+          <component id="cced6" class="javax.swing.JButton" binding="scheduleBtn">
+            <constraints/>
+            <properties>
+              <alignmentY value="0.5"/>
+              <horizontalTextPosition value="0"/>
+              <icon value="free-icon-schedule-7092008.png"/>
+              <iconTextGap value="1"/>
+              <label value=""/>
+              <margin top="2" left="2" bottom="2" right="2"/>
+              <maximumSize width="25" height="25"/>
+              <minimumSize width="25" height="25"/>
+              <preferredSize width="25" height="25"/>
+              <text value=""/>
+            </properties>
+          </component>
         </children>
       </toolbar>
       <grid id="28d0c" binding="mainPanel" layout-manager="GridLayoutManager" row-count="2" column-count="4" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">

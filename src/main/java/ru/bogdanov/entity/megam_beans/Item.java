@@ -1,7 +1,5 @@
 package ru.bogdanov.entity.megam_beans;
 
-import java.util.ArrayList;
-
 public class Item extends MegaMBean {
     private Goods goods;
     private int price;
@@ -11,7 +9,6 @@ public class Item extends MegaMBean {
     private int bonusAmount;
     private double rating;
     private int finalPrice;
-    private ArrayList<Object> discounts;
     private int crossedPrice;
     private String crossedPricePeriod;
     private int lastPrice;
@@ -25,7 +22,6 @@ public class Item extends MegaMBean {
             , int bonusAmount
             , double rating
             , int finalPrice
-            , ArrayList<Object> discounts
             , int crossedPrice
             , String crossedPricePeriod
             , int lastPrice
@@ -38,7 +34,6 @@ public class Item extends MegaMBean {
         this.bonusAmount = bonusAmount;
         this.rating = rating;
         this.finalPrice = finalPrice;
-        this.discounts = discounts;
         this.crossedPrice = crossedPrice;
         this.crossedPricePeriod = crossedPricePeriod;
         this.lastPrice = lastPrice;
@@ -107,14 +102,6 @@ public class Item extends MegaMBean {
 
     public void setFinalPrice(int finalPrice) {
         this.finalPrice = finalPrice;
-    }
-
-    public ArrayList<Object> getDiscounts() {
-        return discounts;
-    }
-
-    public void setDiscounts(ArrayList<Object> discounts) {
-        this.discounts = discounts;
     }
 
     public int getCrossedPrice() {
