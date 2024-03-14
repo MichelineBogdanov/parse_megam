@@ -1,6 +1,5 @@
 package ru.bogdanov.view;
 
-import ru.bogdanov.entity.AbstractBean;
 import ru.bogdanov.entity.megam_beans.Item;
 
 import javax.swing.table.DefaultTableModel;
@@ -8,7 +7,6 @@ import java.lang.reflect.Field;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Vector;
-import java.util.function.Predicate;
 
 public class BeanTableModel<T> extends DefaultTableModel {
 

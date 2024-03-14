@@ -1,23 +1,22 @@
 package ru.bogdanov.view;
 
 import com.google.gson.Gson;
-import org.apache.commons.exec.util.StringUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.devtools.DevTools;
 import org.openqa.selenium.devtools.v120.network.Network;
 import org.openqa.selenium.devtools.v120.network.model.Request;
 import org.openqa.selenium.devtools.v120.network.model.Response;
-import org.openqa.selenium.support.locators.RelativeLocator;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import ru.bogdanov.constants.Constants;
 import ru.bogdanov.entity.megam_beans.Item;
 import ru.bogdanov.entity.megam_beans.Root;
 
-import javax.lang.model.element.Element;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
@@ -31,7 +30,7 @@ public class App extends JFrame {
     private JLabel urlLbl;
     private JToolBar toolBar;
     private JPanel mainPanel;
-    private JTable resultTable;
+    private DataTable resultTable;
     private JScrollPane tableScroll;
     private JButton startBtn;
     private JButton exportBtn;
@@ -39,6 +38,9 @@ public class App extends JFrame {
     private JLabel saleLbl;
     private JTextField saleTF;
     private JButton scheduleBtn;
+    private JLabel rowCount;
+    private JLabel count;
+    private JButton clearBtn;
 
     public static void main(String[] args) {
         App app = new App();
@@ -46,12 +48,19 @@ public class App extends JFrame {
 
     public App() {
         setContentPane(parent);
-        setTitle("Megamarket parser");
+        setTitle(Constants.TITLE);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setSize(new Dimension(800, 500));
         startBtn.addActionListener(e -> onStart());
         stopBtn.addActionListener(e -> onStop());
+        clearBtn.addActionListener(e -> onClear());
         setVisible(true);
+    }
+
+    private void onClear() {
+        resultTable.removeData();
+        resultTable.repaint();
+        count.setText("0");
     }
 
     private void onStop() {
@@ -59,14 +68,16 @@ public class App extends JFrame {
     }
 
     private void onStart() {
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--start-fullscreen");
         String url = urlTF.getText();
-        ChromeDriver driver = new ChromeDriver();
+        ChromeDriver driver = new ChromeDriver(options);
         DevTools devTools = driver.getDevTools();
         devTools.createSession();
         devTools.send(Network.enable(Optional.empty(), Optional.empty(), Optional.empty()));
         devTools.addListener(Network.requestWillBeSent(), requestWillBeSent -> {
             Request request = requestWillBeSent.getRequest();
-            System.out.println(request.getUrl());
+            //System.out.println(request.getUrl());
         });
         devTools.addListener(Network.responseReceived(), responseReceived -> {
             Response response = responseReceived.getResponse();
@@ -80,13 +91,22 @@ public class App extends JFrame {
 
         });
         driver.get(url);
-        driver.manage().timeouts().implicitlyWait(Duration.ofMillis(30000));
+        driver.manage().timeouts().implicitlyWait(Duration.ofMillis(10000));
         Wait<WebDriver> wait = new WebDriverWait(driver, Duration.ofSeconds(20));
         wait.until(ExpectedConditions.elementToBeClickable(By.className("header-region-selector-view__footer-ok"))).click();
-        JavascriptExecutor jse = driver;
-        jse.executeScript("window.scrollBy(0,document.body.scrollHeight)");
         String pageSource = driver.getPageSource();
-        System.out.println(pageSource);
+        String pagesCount = driver.findElement(By.className("catalog-header__count")).getText().replaceAll("\\D", "");
+        int pages = Integer.parseInt(pagesCount);
+        System.out.println(pages);
+        for (int i = 0; i < 2; i++) {
+            try {
+                wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("li.next > a")));
+                Thread.sleep(3000);
+                ((JavascriptExecutor) driver).executeScript("document.querySelector(\"li.next > a\").click();");
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+        }
     }
 
     public void putData(String json) {
@@ -98,6 +118,8 @@ public class App extends JFrame {
             if (item.getBonusPercent() > Integer.parseInt(saleTF.getText() == null || saleTF.getText().isEmpty() ? "0" : saleTF.getText())) {
                 model.addRow(new Object[]{item.getGoods().getTitle(), item.getPrice(), item.getBonusPercent(), item.getGoods().getWebUrl()});
                 resultTable.repaint();
+                int i = Integer.parseInt(count.getText());
+                count.setText(String.valueOf(++i));
             }
         }
     }

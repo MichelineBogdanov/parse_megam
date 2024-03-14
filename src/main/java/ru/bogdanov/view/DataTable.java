@@ -1,7 +1,5 @@
 package ru.bogdanov.view;
 
-import ru.bogdanov.entity.megam_beans.Item;
-
 import javax.swing.*;
 import javax.swing.table.TableRowSorter;
 import java.awt.*;
@@ -11,6 +9,13 @@ import java.net.URI;
 import java.util.Vector;
 
 public class DataTable extends JTable {
+
+    Vector<String> header = new Vector<>() {{
+        add("Название");
+        add("Цена");
+        add("Скидка");
+        add("URI");
+    }};
 
     public DataTable() {
         URICellRenderer renderer = new URICellRenderer();
@@ -34,15 +39,14 @@ public class DataTable extends JTable {
             }
 
         });
-        Vector<String> header = new Vector<>() {{
-            add("Название");
-            add("Цена");
-            add("Скидка");
-            add("URI");
-        }};
+
         DataTableModel myTableModel = new DataTableModel(header, 0);
         this.setModel(myTableModel);
         RowSorter<DataTableModel> sorter = new TableRowSorter<>(myTableModel);
         this.setRowSorter(sorter);
+    }
+
+    public void removeData() {
+        ((DataTableModel)getModel()).removeRows();
     }
 }

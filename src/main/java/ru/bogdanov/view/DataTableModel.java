@@ -35,4 +35,11 @@ public class DataTableModel extends DefaultTableModel {
     public boolean isCellEditable(int row, int column) {
         return false;
     }
+
+    public void removeRows() {
+        int rowCount = getRowCount();
+        for (int i = 0; i < rowCount; i++) {
+            removeRow(0);
+        }
+    }
 }
