@@ -142,7 +142,11 @@ public class App extends JFrame {
         DefaultTableModel model = (DefaultTableModel) resultTable.getModel();
         for (Item item : items) {
             if (item.getBonusPercent() > Integer.parseInt(saleTF.getText() == null || saleTF.getText().isEmpty() ? "0" : saleTF.getText())) {
-                model.addRow(new Object[]{item.getGoods().getTitle(), item.getPrice(), item.getBonusPercent(), item.getGoods().getWebUrl()});
+                model.addRow(new Object[]{item.getGoods().getTitle(),
+                        item.getPrice(),
+                        item.getBonusPercent(),
+                        (item.getPrice() * (100 - item.getBonusPercent())) / 100,
+                        item.getGoods().getWebUrl()});
                 count.increaseValue();
                 resultTable.repaint();
             }

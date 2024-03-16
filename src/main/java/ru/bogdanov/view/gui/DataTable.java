@@ -14,6 +14,7 @@ public class DataTable extends JTable {
         add("Название");
         add("Цена");
         add("Бонусы (в % от цены)");
+        add("Итоговая цена");
         add("Ссылка на товар");
     }};
 

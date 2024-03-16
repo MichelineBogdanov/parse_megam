@@ -15,7 +15,7 @@ public class DataTableModel extends DefaultTableModel {
         if ("URI".equals(getColumnName(columnIndex))) {
             return URI.class;
         }
-        if (columnIndex == 1 || columnIndex == 2) {
+        if (columnIndex == 1 || columnIndex == 2 || columnIndex == 3) {
             return Integer.class;
         }
         return String.class;
