@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="ru.bogdanov.view.App">
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="ru.bogdanov.App">
   <grid id="27dc6" binding="parent" layout-manager="GridLayoutManager" row-count="4" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="0" left="0" bottom="0" right="0"/>
     <constraints>
@@ -34,6 +34,7 @@
               <minimumSize width="25" height="25"/>
               <preferredSize width="25" height="25"/>
               <text value=""/>
+              <toolTipText value="Выгрузить в Excel"/>
             </properties>
           </component>
           <component id="cced6" class="javax.swing.JButton" binding="scheduleBtn">
@@ -49,6 +50,7 @@
               <minimumSize width="25" height="25"/>
               <preferredSize width="25" height="25"/>
               <text value=""/>
+              <toolTipText value="Задать расписание"/>
             </properties>
           </component>
           <component id="6baa9" class="javax.swing.JButton" binding="clearBtn">
@@ -59,6 +61,19 @@
               <maximumSize width="25" height="25"/>
               <minimumSize width="25" height="25"/>
               <text value=""/>
+              <toolTipText value="Очистить таблицу"/>
+            </properties>
+          </component>
+          <component id="d780e" class="javax.swing.JButton" binding="settingsBtn">
+            <constraints/>
+            <properties>
+              <icon value="settings.png"/>
+              <margin top="2" left="2" bottom="2" right="2"/>
+              <maximumSize width="25" height="25"/>
+              <minimumSize width="25" height="25"/>
+              <preferredSize width="25" height="25"/>
+              <text value=""/>
+              <toolTipText value="Настройки"/>
             </properties>
           </component>
         </children>
@@ -102,6 +117,7 @@
               <iconTextGap value="1"/>
               <label value=""/>
               <text value=""/>
+              <toolTipText value="Запустить парсер"/>
             </properties>
           </component>
           <component id="f661d" class="javax.swing.JButton" binding="stopBtn">
@@ -116,6 +132,7 @@
               <icon value="stop.png"/>
               <iconTextGap value="1"/>
               <text value=""/>
+              <toolTipText value="Остановить парсинг"/>
             </properties>
           </component>
           <component id="10406" class="javax.swing.JLabel" binding="saleLbl">
@@ -136,6 +153,22 @@
               <margin top="2" left="6" bottom="2" right="6"/>
             </properties>
           </component>
+          <component id="6cb34" class="javax.swing.JButton" binding="markBestBtn">
+            <constraints>
+              <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false">
+                <minimum-size width="30" height="30"/>
+                <preferred-size width="30" height="30"/>
+                <maximum-size width="30" height="30"/>
+              </grid>
+            </constraints>
+            <properties>
+              <icon value="star.png"/>
+              <iconTextGap value="1"/>
+              <label value=""/>
+              <text value=""/>
+              <toolTipText value="Показать наиболее выгодные товары"/>
+            </properties>
+          </component>
         </children>
       </grid>
       <scrollpane id="8d86d" binding="tableScroll">
@@ -151,7 +184,7 @@
           </component>
         </children>
       </scrollpane>
-      <grid id="d4daa" layout-manager="GridLayoutManager" row-count="1" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+      <grid id="d4daa" layout-manager="GridLayoutManager" row-count="1" column-count="5" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
         <margin top="0" left="0" bottom="0" right="0"/>
         <constraints>
           <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
@@ -180,6 +213,20 @@
               <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
           </hspacer>
+          <component id="50abd" class="javax.swing.JProgressBar" binding="progress">
+            <constraints>
+              <grid row="0" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties/>
+          </component>
+          <component id="21077" class="javax.swing.JLabel" binding="progressLbl">
+            <constraints>
+              <grid row="0" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="Обработано страниц:"/>
+            </properties>
+          </component>
         </children>
       </grid>
     </children>

@@ -9,17 +9,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="82fa0751-e309-474c-9184-102756ecb646" name="Changes" comment="Logic/Interface&#10;[!] - улучшен робот (теперь кликает по страницам)&#10;[!] - добавлены методы очистки таблицы&#10;[+] - добавлен класс с константами&#10;[+] - добавлены label-ы подсчета количества строк&#10;[!] - переименованы иконки">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/bogdanov/view/gui/IntegerLabel.java" afterDir="false" />
+    <list default="true" id="82fa0751-e309-474c-9184-102756ecb646" name="Changes" comment="Logic&#10;[!] - вынесены классы GUI в отдельный пакет&#10;[+] - добавлен кастомный класс для отображения подсчета товаров&#10;[+] - добавлена константа&#10;[+] - добавлен робот для установки региона">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/settings.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/star.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/parse_megam_jar/parse_megam.bat" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/parse_megam_jar/parse_megam.bat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/bogdanov/constants/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/bogdanov/constants/Constants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/bogdanov/view/App.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/bogdanov/view/App.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/bogdanov/view/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/bogdanov/view/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/bogdanov/view/BeanTableModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/bogdanov/view/gui/BeanTableModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/bogdanov/view/DataTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/bogdanov/view/gui/DataTable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/bogdanov/view/DataTableModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/bogdanov/view/gui/DataTableModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/bogdanov/view/URICellRenderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/bogdanov/view/gui/URICellRenderer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/bogdanov/view/App.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/bogdanov/App.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/bogdanov/view/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/bogdanov/App.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +49,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "470",
+    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "338",
     "last_opened_file_path": "C:/Users/qqMik/IdeaProjects/parse_megam/src/main/resources",
     "onboarding.tips.debug.path": "C:/Users/qqMik/IdeaProjects/parse_megam/src/main/java/ru/bogdanov/Main.java",
     "project.structure.last.edited": "Project",
@@ -66,16 +64,17 @@
       <recent name="C:\Users\qqMik\IdeaProjects\parse_megam\build" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\qqMik\IdeaProjects\parse_megam\src\main\java\ru\bogdanov" />
       <recent name="C:\Users\qqMik\IdeaProjects\parse_megam\src\main\resources" />
     </key>
   </component>
   <component name="RunManager" selected="Application.App">
     <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ru.bogdanov.view.App" />
+      <option name="MAIN_CLASS_NAME" value="ru.bogdanov.App" />
       <module name="parse_megam" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ru.bogdanov.view.gui.*" />
+          <option name="PATTERN" value="ru.bogdanov.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -96,64 +95,40 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BeanTableModel" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ru.bogdanov.view.gui.BeanTableModel" />
-      <module name="parse_megam" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ru.bogdanov.view.gui.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
+    <configuration name="parse_megam" type="MavenRunConfiguration" factoryName="Maven" nameIsGenerated="true">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="cmdOptions" />
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list />
+            </option>
+            <option name="pomFileName" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="projectsCmdOptionValues">
+              <list />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
     </configuration>
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ru.bogdanov.Main" />
-      <module name="parse_megam" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ru.bogdanov.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="URICellRenderer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ru.bogdanov.view.gui.URICellRenderer" />
-      <module name="parse_megam" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ru.bogdanov.view.gui.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TestM.testScrapingEcommerce" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="parse_megam" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="TestM" />
-      <option name="METHOD_NAME" value="testScrapingEcommerce" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+    <list>
+      <item itemvalue="Application.App" />
+      <item itemvalue="Maven.parse_megam" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.App" />
-        <item itemvalue="Application.BeanTableModel" />
-        <item itemvalue="Application.URICellRenderer" />
-        <item itemvalue="Application.Main" />
-        <item itemvalue="TestNG.TestM.testScrapingEcommerce" />
       </list>
     </recent_temporary>
   </component>
@@ -262,7 +237,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710446716175</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Logic&#10;[!] - вынесены классы GUI в отдельный пакет&#10;[+] - добавлен кастомный класс для отображения подсчета товаров&#10;[+] - добавлена константа&#10;[+] - добавлен робот для установки региона">
+      <option name="closed" value="true" />
+      <created>1710585962107</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1710585962107</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -289,7 +272,8 @@
     <MESSAGE value="Interface/Logic/Distribute&#10;[+] - добавлены иконки&#10;[+] - попытка создания BeanTableModel&#10;[+] - добавил .bat файл для запуска" />
     <MESSAGE value="Logic&#10;[+] - добавлен &quot;робот&quot;" />
     <MESSAGE value="Logic/Interface&#10;[!] - улучшен робот (теперь кликает по страницам)&#10;[!] - добавлены методы очистки таблицы&#10;[+] - добавлен класс с константами&#10;[+] - добавлены label-ы подсчета количества строк&#10;[!] - переименованы иконки" />
-    <option name="LAST_COMMIT_MESSAGE" value="Logic/Interface&#10;[!] - улучшен робот (теперь кликает по страницам)&#10;[!] - добавлены методы очистки таблицы&#10;[+] - добавлен класс с константами&#10;[+] - добавлены label-ы подсчета количества строк&#10;[!] - переименованы иконки" />
+    <MESSAGE value="Logic&#10;[!] - вынесены классы GUI в отдельный пакет&#10;[+] - добавлен кастомный класс для отображения подсчета товаров&#10;[+] - добавлена константа&#10;[+] - добавлен робот для установки региона" />
+    <option name="LAST_COMMIT_MESSAGE" value="Logic&#10;[!] - вынесены классы GUI в отдельный пакет&#10;[+] - добавлен кастомный класс для отображения подсчета товаров&#10;[+] - добавлена константа&#10;[+] - добавлен робот для установки региона" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -305,7 +289,7 @@
           <option name="timeStamp" value="11" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/ru/bogdanov/view/App.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/ru/bogdanov/App.java</url>
           <line>60</line>
           <option name="timeStamp" value="12" />
         </line-breakpoint>

@@ -13,8 +13,8 @@ public class DataTable extends JTable {
     Vector<String> header = new Vector<>() {{
         add("Название");
         add("Цена");
-        add("Скидка");
-        add("URI");
+        add("Бонусы (в % от цены)");
+        add("Ссылка на товар");
     }};
 
     public DataTable() {

@@ -1,4 +1,4 @@
-package ru.bogdanov.view;
+package ru.bogdanov;
 
 import com.google.gson.Gson;
 import org.openqa.selenium.*;
@@ -41,6 +41,10 @@ public class App extends JFrame {
     private JLabel rowCount;
     private IntegerLabel count;
     private JButton clearBtn;
+    private JProgressBar progress;
+    private JButton markBestBtn;
+    private JButton settingsBtn;
+    private JLabel progressLbl;
 
     public static void main(String[] args) {
         App app = new App();
@@ -51,10 +55,21 @@ public class App extends JFrame {
         setTitle(Constants.TITLE);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setSize(new Dimension(800, 500));
+        exportBtn.addActionListener(e -> onExport());
+        scheduleBtn.addActionListener(e -> onSchedule());
+        clearBtn.addActionListener(e -> onClear());
+        settingsBtn.addActionListener(e -> onSettings());
         startBtn.addActionListener(e -> onStart());
         stopBtn.addActionListener(e -> onStop());
-        clearBtn.addActionListener(e -> onClear());
         setVisible(true);
+    }
+
+    private void onExport() {
+
+    }
+
+    private void onSchedule() {
+
     }
 
     private void onClear() {
@@ -63,8 +78,8 @@ public class App extends JFrame {
         count.setValue(0);
     }
 
-    private void onStop() {
-        System.out.println("Stop!");
+    private void onSettings() {
+
     }
 
     private void onStart() {
@@ -101,6 +116,10 @@ public class App extends JFrame {
         }
     }
 
+    private void onStop() {
+        System.out.println("Stop!");
+    }
+
     private void setRegion(Wait<WebDriver> wait) {
         wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("button.btn-bordered.header-region-selector-view__footer-cancel"))).click();
         WebElement element = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//input[@placeholder='Регион или город']")));
@@ -116,7 +135,7 @@ public class App extends JFrame {
         wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("form > button"))).click();
     }
 
-    public void putData(String json) {
+    private void putData(String json) {
         Gson gson = new Gson();
         Root root = gson.fromJson(json, Root.class);
         ArrayList<Item> items = root.getItems();
