@@ -1,4 +1,4 @@
-package ru.bogdanov.view;
+package ru.bogdanov.view.gui;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableCellRenderer;

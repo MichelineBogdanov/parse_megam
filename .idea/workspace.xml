@@ -9,18 +9,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="82fa0751-e309-474c-9184-102756ecb646" name="Changes" comment="Logic&#10;[+] - добавлен &quot;робот&quot;">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/bogdanov/constants/Constants.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/clear.png" afterDir="false" />
+    <list default="true" id="82fa0751-e309-474c-9184-102756ecb646" name="Changes" comment="Logic/Interface&#10;[!] - улучшен робот (теперь кликает по страницам)&#10;[!] - добавлены методы очистки таблицы&#10;[+] - добавлен класс с константами&#10;[+] - добавлены label-ы подсчета количества строк&#10;[!] - переименованы иконки">
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/bogdanov/view/gui/IntegerLabel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/bogdanov/constants/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/bogdanov/constants/Constants.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/bogdanov/view/App.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/bogdanov/view/App.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/bogdanov/view/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/bogdanov/view/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/bogdanov/view/BeanTableModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/bogdanov/view/BeanTableModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/bogdanov/view/DataTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/bogdanov/view/DataTable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/bogdanov/view/DataTableModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/bogdanov/view/DataTableModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/free-icon-play-button-149125.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/go.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/free-icon-schedule-7092008.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/schedule.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/free-icon-stop-button-2391033 (1).png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/stop.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/bogdanov/view/BeanTableModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/bogdanov/view/gui/BeanTableModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/bogdanov/view/DataTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/bogdanov/view/gui/DataTable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/bogdanov/view/DataTableModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/bogdanov/view/gui/DataTableModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/bogdanov/view/URICellRenderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/bogdanov/view/gui/URICellRenderer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,7 +75,7 @@
       <module name="parse_megam" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ru.bogdanov.view.*" />
+          <option name="PATTERN" value="ru.bogdanov.view.gui.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -98,11 +97,11 @@
       </method>
     </configuration>
     <configuration name="BeanTableModel" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ru.bogdanov.view.BeanTableModel" />
+      <option name="MAIN_CLASS_NAME" value="ru.bogdanov.view.gui.BeanTableModel" />
       <module name="parse_megam" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ru.bogdanov.view.*" />
+          <option name="PATTERN" value="ru.bogdanov.view.gui.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -124,11 +123,11 @@
       </method>
     </configuration>
     <configuration name="URICellRenderer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ru.bogdanov.view.URICellRenderer" />
+      <option name="MAIN_CLASS_NAME" value="ru.bogdanov.view.gui.URICellRenderer" />
       <module name="parse_megam" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ru.bogdanov.view.*" />
+          <option name="PATTERN" value="ru.bogdanov.view.gui.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -255,7 +254,15 @@
       <option name="project" value="LOCAL" />
       <updated>1709905008460</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Logic/Interface&#10;[!] - улучшен робот (теперь кликает по страницам)&#10;[!] - добавлены методы очистки таблицы&#10;[+] - добавлен класс с константами&#10;[+] - добавлены label-ы подсчета количества строк&#10;[!] - переименованы иконки">
+      <option name="closed" value="true" />
+      <created>1710446716175</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1710446716175</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -281,7 +288,8 @@
     <MESSAGE value="Interface/Logic&#10;[!] - добавил поле для ввода размера скидки&#10;[+] - добавил кастомный класс для таблицы&#10;[!] - прописал каст к URI в ентити для товара" />
     <MESSAGE value="Interface/Logic/Distribute&#10;[+] - добавлены иконки&#10;[+] - попытка создания BeanTableModel&#10;[+] - добавил .bat файл для запуска" />
     <MESSAGE value="Logic&#10;[+] - добавлен &quot;робот&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Logic&#10;[+] - добавлен &quot;робот&quot;" />
+    <MESSAGE value="Logic/Interface&#10;[!] - улучшен робот (теперь кликает по страницам)&#10;[!] - добавлены методы очистки таблицы&#10;[+] - добавлен класс с константами&#10;[+] - добавлены label-ы подсчета количества строк&#10;[!] - переименованы иконки" />
+    <option name="LAST_COMMIT_MESSAGE" value="Logic/Interface&#10;[!] - улучшен робот (теперь кликает по страницам)&#10;[!] - добавлены методы очистки таблицы&#10;[+] - добавлен класс с константами&#10;[+] - добавлены label-ы подсчета количества строк&#10;[!] - переименованы иконки" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -292,7 +300,7 @@
           <option name="timeStamp" value="6" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/ru/bogdanov/view/BeanTableModel.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/ru/bogdanov/view/gui/BeanTableModel.java</url>
           <line>39</line>
           <option name="timeStamp" value="11" />
         </line-breakpoint>

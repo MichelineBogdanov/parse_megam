@@ -1,4 +1,4 @@
-package ru.bogdanov.view;
+package ru.bogdanov.view.gui;
 
 import ru.bogdanov.entity.megam_beans.Item;
 
