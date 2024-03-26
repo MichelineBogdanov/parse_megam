@@ -11,6 +11,8 @@ import org.openqa.selenium.devtools.v120.network.model.Response;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import ru.bogdanov.config.Config;
+import ru.bogdanov.config.SettingsDlg;
 import ru.bogdanov.constants.Constants;
 import ru.bogdanov.entity.megam_beans.Item;
 import ru.bogdanov.entity.megam_beans.Root;
@@ -25,6 +27,7 @@ import java.util.ArrayList;
 import java.util.Optional;
 
 public class App extends JFrame {
+
     private JPanel parent;
     private JTextField urlTF;
     private JLabel urlLbl;
@@ -35,16 +38,16 @@ public class App extends JFrame {
     private JButton startBtn;
     private JButton exportBtn;
     private JButton stopBtn;
-    private JLabel saleLbl;
     private JTextField saleTF;
     private JButton scheduleBtn;
     private JLabel rowCount;
     private IntegerLabel count;
     private JButton clearBtn;
     private JProgressBar progress;
-    private JButton markBestBtn;
     private JButton settingsBtn;
     private JLabel progressLbl;
+
+    private Config config;
 
     public static void main(String[] args) {
         App app = new App();
@@ -52,7 +55,7 @@ public class App extends JFrame {
 
     public App() {
         setContentPane(parent);
-        setTitle(Constants.TITLE);
+        setTitle(Constants.APP_TITLE);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setSize(new Dimension(800, 500));
         exportBtn.addActionListener(e -> onExport());
@@ -79,7 +82,8 @@ public class App extends JFrame {
     }
 
     private void onSettings() {
-
+        SettingsDlg settingsDlg = new SettingsDlg(config);
+        config = settingsDlg.getConfig();
     }
 
     private void onStart() {
