@@ -18,6 +18,9 @@ public class DataTableModel extends DefaultTableModel {
         if (columnIndex == 1 || columnIndex == 2 || columnIndex == 3) {
             return Integer.class;
         }
+        if (columnIndex == 4) {
+            return Double.class;
+        }
         return String.class;
     }
 

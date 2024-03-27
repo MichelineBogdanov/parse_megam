@@ -4,8 +4,8 @@ public class Config {
 
     private boolean isFixApp;
     private boolean isOpenBrowser;
-    private int sale;
-    private double rate;
+    private int sale = 0;
+    private double rate = 0;
 
     public Config() {
     }

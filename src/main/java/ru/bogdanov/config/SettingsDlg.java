@@ -1,5 +1,7 @@
 package ru.bogdanov.config;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import ru.bogdanov.constants.Constants;
 
 import javax.swing.*;
@@ -23,6 +25,7 @@ public class SettingsDlg extends JDialog {
     private JPanel itemSettings;
 
     private Config config;
+    private static final Logger LOG = LoggerFactory.getLogger(SettingsDlg.class);
 
     public SettingsDlg(Config config) {
         setModal(true);
@@ -36,23 +39,25 @@ public class SettingsDlg extends JDialog {
     }
 
     private void setConfigToIU(Config config) {
-        if (config != null) {
-            this.config = config;
-            fixAppCB.setSelected(config.isFixApp());
-            openBrowserCB.setSelected(config.isOpenBrowser());
-            saleTF.setText(String.valueOf(config.getSale()));
-            rateTF.setText(String.valueOf(config.getRate()));
-        } else {
-            this.config = new Config();
-        }
+        this.config = config;
+        fixAppCB.setSelected(config.isFixApp());
+        openBrowserCB.setSelected(config.isOpenBrowser());
+        saleTF.setText(String.valueOf(config.getSale()));
+        rateTF.setText(String.valueOf(config.getRate()));
     }
 
     private void onSaveSettings() {
-        config.setFixApp(fixAppCB.isSelected());
-        config.setOpenBrowser(openBrowserCB.isSelected());
-        config.setSale(Integer.parseInt(saleTF.getText()));
-        config.setRate(Double.parseDouble(rateTF.getText()));
-        this.dispose();
+        try {
+            config.setFixApp(fixAppCB.isSelected());
+            config.setOpenBrowser(openBrowserCB.isSelected());
+            config.setSale(Integer.parseInt(saleTF.getText()));
+            config.setRate(Double.parseDouble(rateTF.getText()));
+            this.dispose();
+        } catch (NumberFormatException e) {
+            LOG.error("Неверный формат числа");
+            JOptionPane.showMessageDialog(this, "Введено число неверного формата\n"
+                    + e.getMessage());
+        }
     }
 
     public Config getConfig() {

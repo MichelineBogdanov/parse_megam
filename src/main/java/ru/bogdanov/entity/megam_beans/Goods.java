@@ -1,13 +1,20 @@
 package ru.bogdanov.entity.megam_beans;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import ru.bogdanov.config.SettingsDlg;
+
 import java.net.URI;
 import java.net.URISyntaxException;
 
 public class Goods extends MegaMBean {
+
     private String goodsId;
     private String title;
     private URI webUrl;
     private String brand;
+
+    private static final Logger LOG = LoggerFactory.getLogger(Goods.class);
 
     public Goods(String goodsId, String title, String webUrl, String brand) {
         this.goodsId = goodsId;
@@ -15,6 +22,7 @@ public class Goods extends MegaMBean {
         try {
             this.webUrl = new URI(webUrl);
         } catch (URISyntaxException e) {
+            LOG.error("Не удалось преобразовать строку в URL");
             throw new RuntimeException(e);
         }
         this.brand = brand;
@@ -44,6 +52,7 @@ public class Goods extends MegaMBean {
         try {
             this.webUrl = new URI(webUrl);
         } catch (URISyntaxException e) {
+            LOG.error("Не удалось преобразовать строку в URL");
             throw new RuntimeException(e);
         }
     }

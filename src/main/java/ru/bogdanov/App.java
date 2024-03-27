@@ -11,6 +11,8 @@ import org.openqa.selenium.devtools.v120.network.model.Response;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import ru.bogdanov.config.Config;
 import ru.bogdanov.config.SettingsDlg;
 import ru.bogdanov.constants.Constants;
@@ -38,7 +40,6 @@ public class App extends JFrame {
     private JButton startBtn;
     private JButton exportBtn;
     private JButton stopBtn;
-    private JTextField saleTF;
     private JButton scheduleBtn;
     private JLabel rowCount;
     private IntegerLabel count;
@@ -47,7 +48,8 @@ public class App extends JFrame {
     private JButton settingsBtn;
     private JLabel progressLbl;
 
-    private Config config;
+    private Config config = new Config();
+    private static final Logger LOG = LoggerFactory.getLogger(App.class);
 
     public static void main(String[] args) {
         App app = new App();
@@ -65,6 +67,7 @@ public class App extends JFrame {
         startBtn.addActionListener(e -> onStart());
         stopBtn.addActionListener(e -> onStop());
         setVisible(true);
+        LOG.info("Приложение запустилось!");
     }
 
     private void onExport() {
@@ -115,6 +118,7 @@ public class App extends JFrame {
                 Thread.sleep(3000);
                 ((JavascriptExecutor) driver).executeScript("document.querySelector(\"li.next > a\").click();");
             } catch (InterruptedException e) {
+                LOG.error("Ожидание не завершилось");
                 throw new RuntimeException(e);
             }
         }
@@ -128,10 +132,11 @@ public class App extends JFrame {
         wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("button.btn-bordered.header-region-selector-view__footer-cancel"))).click();
         WebElement element = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//input[@placeholder='Регион или город']")));
         element.click();
-        element.sendKeys("Санкт-Петербург");
+        element.sendKeys(Constants.CITY);
         try {
             Thread.sleep(1000);
         } catch (InterruptedException e) {
+            LOG.error("Ожидание не завершилось");
             throw new RuntimeException(e);
         }
         element.sendKeys(Keys.DOWN);
@@ -145,11 +150,12 @@ public class App extends JFrame {
         ArrayList<Item> items = root.getItems();
         DefaultTableModel model = (DefaultTableModel) resultTable.getModel();
         for (Item item : items) {
-            if (item.getBonusPercent() > Integer.parseInt(saleTF.getText() == null || saleTF.getText().isEmpty() ? "0" : saleTF.getText())) {
+            if (item.getBonusPercent() > config.getSale() && item.getRating() > config.getRate()) {
                 model.addRow(new Object[]{item.getGoods().getTitle(),
                         item.getPrice(),
                         item.getBonusPercent(),
                         (item.getPrice() * (100 - item.getBonusPercent())) / 100,
+                        item.getRating(),
                         item.getGoods().getWebUrl()});
                 count.increaseValue();
                 resultTable.repaint();

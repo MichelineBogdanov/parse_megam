@@ -9,16 +9,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="82fa0751-e309-474c-9184-102756ecb646" name="Changes" comment="Interface&#10;[!] - добавлены всплывающие подсказки на кнопки&#10;[+] - добавлены кнопки настроек&#10;[+] - добавлена полоса прогресса">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/bogdanov/config/SettingsDlg.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/bogdanov/config/SettingsDlg.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="82fa0751-e309-474c-9184-102756ecb646" name="Changes" comment="Interface&#10;[+] - добавлен диалог с настройками приложения, сделана обработка кнопок и элементов интерфейса">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/logback.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/bogdanov/App.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/bogdanov/App.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/bogdanov/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/bogdanov/App.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/bogdanov/config/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/bogdanov/config/Config.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/bogdanov/config/SettingsDlg.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/bogdanov/config/SettingsDlg.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/bogdanov/constants/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/bogdanov/constants/Constants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/bogdanov/entity/megam_beans/Goods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/bogdanov/entity/megam_beans/Goods.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/bogdanov/view/gui/DataTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/bogdanov/view/gui/DataTable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/bogdanov/view/gui/DataTableModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/bogdanov/view/gui/DataTableModel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -257,8 +258,18 @@
       <option name="project" value="LOCAL" />
       <updated>1710607973760</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Interface&#10;[+] - добавлен диалог с настройками приложения, сделана обработка кнопок и элементов интерфейса">
+      <created>1711478218484</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1711478218484</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.log" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -287,14 +298,15 @@
     <MESSAGE value="Logic&#10;[!] - вынесены классы GUI в отдельный пакет&#10;[+] - добавлен кастомный класс для отображения подсчета товаров&#10;[+] - добавлена константа&#10;[+] - добавлен робот для установки региона" />
     <MESSAGE value="Build&#10;[!] - добавлены плагины для сборки" />
     <MESSAGE value="Interface&#10;[!] - добавлены всплывающие подсказки на кнопки&#10;[+] - добавлены кнопки настроек&#10;[+] - добавлена полоса прогресса" />
-    <option name="LAST_COMMIT_MESSAGE" value="Interface&#10;[!] - добавлены всплывающие подсказки на кнопки&#10;[+] - добавлены кнопки настроек&#10;[+] - добавлена полоса прогресса" />
+    <MESSAGE value="Interface&#10;[+] - добавлен диалог с настройками приложения, сделана обработка кнопок и элементов интерфейса" />
+    <option name="LAST_COMMIT_MESSAGE" value="Interface&#10;[+] - добавлен диалог с настройками приложения, сделана обработка кнопок и элементов интерфейса" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/ru/bogdanov/entity/megam_beans/Goods.java</url>
-          <line>12</line>
+          <line>19</line>
           <option name="timeStamp" value="6" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
