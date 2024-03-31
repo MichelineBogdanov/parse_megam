@@ -18,6 +18,7 @@ import ru.bogdanov.config.SettingsDlg;
 import ru.bogdanov.constants.Constants;
 import ru.bogdanov.entity.megam_beans.Item;
 import ru.bogdanov.entity.megam_beans.Root;
+import ru.bogdanov.view.ExcelExporter;
 import ru.bogdanov.view.gui.DataTable;
 import ru.bogdanov.view.gui.IntegerLabel;
 
@@ -50,6 +51,7 @@ public class App extends JFrame {
 
     private Config config = new Config();
     private static final Logger LOG = LoggerFactory.getLogger(App.class);
+    private Thread curThread;
 
     public static void main(String[] args) {
         App app = new App();
@@ -71,7 +73,8 @@ public class App extends JFrame {
     }
 
     private void onExport() {
-
+        ExcelExporter excelExporter = new ExcelExporter(this);
+        excelExporter.saveFile(resultTable);
     }
 
     private void onSchedule() {

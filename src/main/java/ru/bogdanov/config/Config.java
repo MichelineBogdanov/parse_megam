@@ -10,13 +10,6 @@ public class Config {
     public Config() {
     }
 
-    public Config(boolean isFixApp, boolean isOpenBrowser, int sale, double rate) {
-        this.isFixApp = isFixApp;
-        this.isOpenBrowser = isOpenBrowser;
-        this.sale = sale;
-        this.rate = rate;
-    }
-
     public boolean isFixApp() {
         return isFixApp;
     }

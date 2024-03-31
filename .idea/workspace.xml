@@ -10,16 +10,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="82fa0751-e309-474c-9184-102756ecb646" name="Changes" comment="Interface&#10;[+] - добавлен диалог с настройками приложения, сделана обработка кнопок и элементов интерфейса">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/logback.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/bogdanov/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/bogdanov/App.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/bogdanov/config/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/bogdanov/config/Config.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/bogdanov/config/SettingsDlg.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/bogdanov/config/SettingsDlg.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/bogdanov/constants/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/bogdanov/constants/Constants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/bogdanov/entity/megam_beans/Goods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/bogdanov/entity/megam_beans/Goods.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/bogdanov/view/gui/DataTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/bogdanov/view/gui/DataTable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/bogdanov/view/gui/DataTableModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/bogdanov/view/gui/DataTableModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/bogdanov/view/ExcelImporter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/bogdanov/view/ExcelExporter.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,13 +34,6 @@
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
-  </component>
-  <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="useMavenConfig" value="true" />
-      </MavenGeneralSettings>
-    </option>
   </component>
   <component name="ProjectId" id="2afyzOrqvBqwuL1mx4YvaJkRCQM" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -102,6 +91,7 @@
         <option name="myRunnerSettings" />
         <option name="myRunnerParameters">
           <MavenRunnerParameters>
+            <option name="cmdOptions" />
             <option name="profiles">
               <set />
             </option>
@@ -111,6 +101,9 @@
             <option name="pomFileName" />
             <option name="profilesMap">
               <map />
+            </option>
+            <option name="projectsCmdOptionValues">
+              <list />
             </option>
             <option name="resolveToWorkspace" value="false" />
             <option name="workingDirPath" value="$PROJECT_DIR$" />
@@ -313,6 +306,21 @@
           <url>file://$PROJECT_DIR$/src/main/java/ru/bogdanov/view/gui/BeanTableModel.java</url>
           <line>39</line>
           <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/ru/bogdanov/App.java</url>
+          <line>95</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/ru/bogdanov/App.java</url>
+          <line>97</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/ru/bogdanov/view/ExcelExporter.java</url>
+          <line>27</line>
+          <option name="timeStamp" value="15" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
