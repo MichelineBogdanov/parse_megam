@@ -26,7 +26,7 @@
             <properties>
               <alignmentY value="0.5"/>
               <horizontalTextPosition value="0"/>
-              <icon value="export.png"/>
+              <icon value="export-16x16.png"/>
               <iconTextGap value="1"/>
               <label value=""/>
               <margin top="2" left="2" bottom="2" right="2"/>
@@ -42,7 +42,7 @@
             <properties>
               <alignmentY value="0.5"/>
               <horizontalTextPosition value="0"/>
-              <icon value="schedule.png"/>
+              <icon value="schedule-16x16.png"/>
               <iconTextGap value="1"/>
               <label value=""/>
               <margin top="2" left="2" bottom="2" right="2"/>
@@ -56,7 +56,7 @@
           <component id="6baa9" class="javax.swing.JButton" binding="clearBtn">
             <constraints/>
             <properties>
-              <icon value="clear.png"/>
+              <icon value="cleaning-16x16.png"/>
               <margin top="2" left="2" bottom="2" right="2"/>
               <maximumSize width="25" height="25"/>
               <minimumSize width="25" height="25"/>
@@ -67,7 +67,7 @@
           <component id="d780e" class="javax.swing.JButton" binding="settingsBtn">
             <constraints/>
             <properties>
-              <icon value="settings.png"/>
+              <icon value="settings-16x16.png"/>
               <margin top="2" left="2" bottom="2" right="2"/>
               <maximumSize width="25" height="25"/>
               <minimumSize width="25" height="25"/>
@@ -113,7 +113,7 @@
             <properties>
               <alignmentY value="0.5"/>
               <horizontalTextPosition value="0"/>
-              <icon value="go.png"/>
+              <icon value="go-24x24.png"/>
               <iconTextGap value="1"/>
               <label value=""/>
               <text value=""/>
@@ -129,7 +129,7 @@
               </grid>
             </constraints>
             <properties>
-              <icon value="stop.png"/>
+              <icon value="stop-24x24.png"/>
               <iconTextGap value="1"/>
               <text value=""/>
               <toolTipText value="Остановить парсинг"/>
@@ -150,7 +150,7 @@
           </component>
         </children>
       </scrollpane>
-      <grid id="d4daa" layout-manager="GridLayoutManager" row-count="1" column-count="5" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+      <grid id="d4daa" binding="footer" layout-manager="GridLayoutManager" row-count="1" column-count="5" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
         <margin top="0" left="0" bottom="0" right="0"/>
         <constraints>
           <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>

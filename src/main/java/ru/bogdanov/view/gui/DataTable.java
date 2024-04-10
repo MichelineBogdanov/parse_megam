@@ -2,7 +2,6 @@ package ru.bogdanov.view.gui;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import ru.bogdanov.entity.megam_beans.Goods;
 
 import javax.swing.*;
 import javax.swing.table.TableRowSorter;
@@ -53,6 +52,6 @@ public class DataTable extends JTable {
     }
 
     public void removeData() {
-        ((DataTableModel)getModel()).removeRows();
+        ((DataTableModel) getModel()).removeRows();
     }
 }

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="ru.bogdanov.view.forms.TaskCard">
+  <grid id="27dc6" binding="parent" layout-manager="GridLayoutManager" row-count="1" column-count="4" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+    <margin top="0" left="0" bottom="0" right="0"/>
+    <constraints>
+      <xy x="20" y="20" width="516" height="38"/>
+    </constraints>
+    <properties>
+      <maximumSize width="-1" height="-1"/>
+      <minimumSize width="-1" height="-1"/>
+      <preferredSize width="-1" height="-1"/>
+    </properties>
+    <border type="line"/>
+    <children>
+      <component id="f2740" class="javax.swing.JButton" binding="expandBtn">
+        <constraints>
+          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false">
+            <minimum-size width="30" height="30"/>
+            <preferred-size width="30" height="30"/>
+            <maximum-size width="30" height="30"/>
+          </grid>
+        </constraints>
+        <properties>
+          <icon value="resize-24x24.png"/>
+          <text value=""/>
+        </properties>
+      </component>
+      <component id="77aba" class="javax.swing.JTextField" binding="urlTF">
+        <constraints>
+          <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="-1"/>
+          </grid>
+        </constraints>
+        <properties/>
+      </component>
+      <component id="33997" class="javax.swing.JProgressBar" binding="taskProgressBar">
+        <constraints>
+          <grid row="0" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties/>
+      </component>
+      <toolbar id="126ec" binding="taskManagerTB">
+        <constraints>
+          <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <floatable value="false"/>
+        </properties>
+        <border type="none"/>
+        <children>
+          <component id="56c95" class="javax.swing.JButton" binding="goBtn">
+            <constraints/>
+            <properties>
+              <alignmentY value="0.5"/>
+              <horizontalTextPosition value="0"/>
+              <icon value="go-16x16.png"/>
+              <iconTextGap value="1"/>
+              <label value=""/>
+              <margin top="2" left="2" bottom="2" right="2"/>
+              <maximumSize width="25" height="25"/>
+              <minimumSize width="25" height="25"/>
+              <preferredSize width="25" height="25"/>
+              <text value=""/>
+              <toolTipText value="Выгрузить в Excel"/>
+            </properties>
+          </component>
+          <component id="d6258" class="javax.swing.JButton" binding="pauseBtn">
+            <constraints/>
+            <properties>
+              <alignmentY value="0.5"/>
+              <horizontalTextPosition value="0"/>
+              <icon value="pause-16x16.png"/>
+              <iconTextGap value="1"/>
+              <label value=""/>
+              <margin top="2" left="2" bottom="2" right="2"/>
+              <maximumSize width="25" height="25"/>
+              <minimumSize width="25" height="25"/>
+              <preferredSize width="25" height="25"/>
+              <text value=""/>
+              <toolTipText value="Задать расписание"/>
+            </properties>
+          </component>
+          <component id="a4d6e" class="javax.swing.JButton" binding="stopBtn">
+            <constraints/>
+            <properties>
+              <icon value="stop-16x16.png"/>
+              <margin top="2" left="2" bottom="2" right="2"/>
+              <maximumSize width="25" height="25"/>
+              <minimumSize width="25" height="25"/>
+              <preferredSize width="25" height="25"/>
+              <text value=""/>
+              <toolTipText value="Настройки"/>
+            </properties>
+          </component>
+        </children>
+      </toolbar>
+    </children>
+  </grid>
+</form>

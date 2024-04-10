@@ -12,17 +12,15 @@ public class SettingsDlg extends JDialog {
     private JPanel parent;
     private JCheckBox fixAppCB;
     private JCheckBox openBrowserCB;
-    private JSeparator separator1;
-    private JSeparator separator2;
     private JTextField saleTF;
     private JTextField rateTF;
     private JLabel saleLbl;
     private JLabel rateLbl;
     private JButton saveBtn;
-    private JPanel allSettings;
     private JPanel appSettings;
     private JPanel browserSettings;
     private JPanel itemSettings;
+    private JTabbedPane settingsTabPane;
 
     private Config config;
     private static final Logger LOG = LoggerFactory.getLogger(SettingsDlg.class);
@@ -52,6 +50,7 @@ public class SettingsDlg extends JDialog {
             config.setOpenBrowser(openBrowserCB.isSelected());
             config.setSale(Integer.parseInt(saleTF.getText()));
             config.setRate(Double.parseDouble(rateTF.getText()));
+            LOG.info("Задана конфигурация: " + config.toString());
             this.dispose();
         } catch (NumberFormatException e) {
             LOG.error("Неверный формат числа");

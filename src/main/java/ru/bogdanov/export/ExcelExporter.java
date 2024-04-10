@@ -1,13 +1,11 @@
-package ru.bogdanov.view;
+package ru.bogdanov.export;
 
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-import org.openqa.selenium.devtools.v85.io.IO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import ru.bogdanov.App;
 
 import javax.swing.*;
 import java.awt.*;
