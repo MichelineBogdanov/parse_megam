@@ -4,9 +4,9 @@ import javax.swing.table.DefaultTableModel;
 import java.net.URI;
 import java.util.Vector;
 
-public class DataTableModel extends DefaultTableModel {
+public class ItemTableModel extends DefaultTableModel {
 
-    public DataTableModel(Vector<?> columnNames, int rowCount) {
+    public ItemTableModel(Vector<?> columnNames, int rowCount) {
         super(columnNames, rowCount);
     }
 

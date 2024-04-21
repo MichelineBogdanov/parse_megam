@@ -9,34 +9,35 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="82fa0751-e309-474c-9184-102756ecb646" name="Changes" comment="Logik&#10;[+] - добавлена функция экспорта данных в эксель">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/bogdanov/entity/BrowserFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/bogdanov/view/gui/TaskCard.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/bogdanov/view/gui/TaskCard.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/bogdanov/view/gui/TaskWindow.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/bogdanov/view/gui/TaskWindow.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/bogdanov/workers/TaskParse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/cleaning-16x16.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/down-24x24.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/go-16x16.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/pause-16x16.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/pause-24x24.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/resize-24x24.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/settings-16x16.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/stop-16x16.png" afterDir="false" />
+    <list default="true" id="82fa0751-e309-474c-9184-102756ecb646" name="Changes" comment="Refactoring">
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/bogdanov/ButtonColumnDemo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/bogdanov/app/UICallback.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/bogdanov/config/SettingsExporter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/bogdanov/view/gui/ButtonColumn.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/bogdanov/view/gui/TaskQueueWorker.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/bogdanov/view/gui/TaskTable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/bogdanov/workers/Loader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/paused-24x24.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/ready-24x24.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/remove-24x24.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/search-24x24.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/star-16x16.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/TestTable.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/TestTable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/bogdanov/App.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/bogdanov/App.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/bogdanov/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/bogdanov/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/bogdanov/App.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/bogdanov/app/App.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/bogdanov/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/bogdanov/app/App.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/bogdanov/config/SettingsDlg.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/bogdanov/config/SettingsDlg.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/bogdanov/config/SettingsDlg.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/bogdanov/config/SettingsDlg.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/bogdanov/view/gui/DataTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/bogdanov/view/gui/DataTable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/clear.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/clear-24x24.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/export.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/export-16x16.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/go.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/go-24x24.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/schedule.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/schedule-16x16.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/settings.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/settings-24x24.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/star.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/star-24x24.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/stop.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/stop-24x24.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/bogdanov/view/forms/TaskCard.form" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/bogdanov/view/forms/TaskCard.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/bogdanov/view/forms/TaskWindow.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/bogdanov/view/forms/TaskWindow.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/bogdanov/view/forms/TaskWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/bogdanov/view/forms/TaskWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/bogdanov/view/gui/DataTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/bogdanov/view/gui/ItemTable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/bogdanov/view/gui/DataTableModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/bogdanov/view/gui/ItemTableModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/bogdanov/workers/TaskParse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/bogdanov/workers/ParseLoader.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,6 +48,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -69,17 +71,22 @@
   }
 }</component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="ru.bogdanov.view.gui" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\qqMik\IdeaProjects\parse_megam\src\main\resources" />
       <recent name="C:\Users\aspire\IdeaProjects\parse_megam12\src\main\java\ru\bogdanov\config" />
       <recent name="C:\Users\qqMik\IdeaProjects\parse_megam\build" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\qqMik\IdeaProjects\parse_megam\src\main\java\ru\bogdanov\app" />
+      <recent name="C:\Users\qqMik\IdeaProjects\parse_megam\src\main\java\ru\bogdanov\view\gui\forms" />
       <recent name="C:\Users\qqMik\IdeaProjects\parse_megam\src\main\java\ru\bogdanov" />
       <recent name="C:\Users\qqMik\IdeaProjects\parse_megam\src\main\resources" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.App">
+  <component name="RunManager" selected="Application.ru.bogdanov.app.App">
     <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ru.bogdanov.App" />
       <module name="parse_megam" />
@@ -106,12 +113,45 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ThreadInterruptClass" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ru.bogdanov.ThreadInterruptClass" />
+    <configuration name="ButtonColumnDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ru.bogdanov.ButtonColumnDemo" />
       <module name="parse_megam" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="ru.bogdanov.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ru.bogdanov.Test" />
+      <module name="parse_megam" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.bogdanov.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestTable" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="TestTable" />
+      <module name="parse_megam" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ru.bogdanov.app.App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ru.bogdanov.app.App" />
+      <module name="parse_megam" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.bogdanov.app.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -147,14 +187,20 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Application.ThreadInterruptClass" />
+      <item itemvalue="Application.TestTable" />
+      <item itemvalue="Application.ButtonColumnDemo" />
+      <item itemvalue="Application.Test" />
+      <item itemvalue="Application.ru.bogdanov.app.App" />
       <item itemvalue="Application.App" />
       <item itemvalue="Maven.parse_megam" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ru.bogdanov.app.App" />
+        <item itemvalue="Application.ButtonColumnDemo" />
+        <item itemvalue="Application.TestTable" />
+        <item itemvalue="Application.Test" />
         <item itemvalue="Application.App" />
-        <item itemvalue="Application.ThreadInterruptClass" />
       </list>
     </recent_temporary>
   </component>
@@ -302,7 +348,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711893560008</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Refactoring">
+      <option name="closed" value="true" />
+      <created>1712773885326</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1712773885326</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -337,7 +391,8 @@
     <MESSAGE value="Interface&#10;[!] - добавлены всплывающие подсказки на кнопки&#10;[+] - добавлены кнопки настроек&#10;[+] - добавлена полоса прогресса" />
     <MESSAGE value="Interface&#10;[+] - добавлен диалог с настройками приложения, сделана обработка кнопок и элементов интерфейса" />
     <MESSAGE value="Logik&#10;[+] - добавлена функция экспорта данных в эксель" />
-    <option name="LAST_COMMIT_MESSAGE" value="Logik&#10;[+] - добавлена функция экспорта данных в эксель" />
+    <MESSAGE value="Refactoring" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactoring" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -353,9 +408,14 @@
           <option name="timeStamp" value="11" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/ru/bogdanov/view/ExcelExporter.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/ru/bogdanov/export/ExcelExporter.java</url>
           <line>27</line>
           <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/ru/bogdanov/view/gui/TaskTable.java</url>
+          <line>110</line>
+          <option name="timeStamp" value="18" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

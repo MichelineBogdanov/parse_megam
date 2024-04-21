@@ -36,7 +36,7 @@
                     <archive>
                         <manifest>
                             <addClasspath>true</addClasspath>
-                            <Main-Class>ru.bogdanov.App</Main-Class>
+                            <Main-Class>ru.bogdanov.app.App</Main-Class>
                         </manifest>
                     </archive>
                 </configuration>
@@ -57,7 +57,7 @@
                             <transformers>
                                 <transformer
                                         implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                                    <mainClass>ru.bogdanov.App</mainClass>
+                                    <mainClass>ru.bogdanov.app.App</mainClass>
                                 </transformer>
                             </transformers>
                         </configuration>

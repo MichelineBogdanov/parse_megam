@@ -1,19 +1,20 @@
 package ru.bogdanov.view.forms;
 
-import ru.bogdanov.view.gui.DataTable;
+import ru.bogdanov.view.gui.ItemTable;
 import ru.bogdanov.view.gui.IntegerLabel;
+import ru.bogdanov.app.UICallback;
 
 import javax.swing.*;
 
-public class TaskWindow {
+public class TaskWindow implements UICallback {
     private JPanel parent;
     private JPanel mainPanel;
     private JLabel urlLbl;
     private JTextField urlTF;
     private JButton startBtn;
     private JButton stopBtn;
-    private DataTable resultTable;
-    private JLabel rowCount;
+    private ItemTable resultTable;
+    private JLabel rowCountLbl;
     private JLabel progressLbl;
     private JProgressBar progress;
     private IntegerLabel count;
@@ -21,5 +22,44 @@ public class TaskWindow {
     private JLabel configLbl;
     private JTextField configTF;
     private JButton pauseBtn;
-    private JPanel footer;
+    private JPanel footerPanel;
+    private JScrollPane tableScrollPanel;
+    private JToolBar toolBar;
+    private JButton exportBtn;
+    private JButton clearBtn;
+
+    @Override
+    public void putTableData(String json) {
+
+    }
+
+    @Override
+    public void increaseCounter(Integer number) {
+
+    }
+
+    @Override
+    public void increaseCounter() {
+
+    }
+
+    @Override
+    public void setProgress(int progressPercent) {
+
+    }
+
+    @Override
+    public void startParsing() {
+
+    }
+
+    @Override
+    public void stopParsing() {
+
+    }
+
+    @Override
+    public void showError(String message) {
+
+    }
 }
