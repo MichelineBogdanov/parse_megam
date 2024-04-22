@@ -1,7 +1,7 @@
 package ru.bogdanov.view.forms;
 
-import ru.bogdanov.view.gui.ItemTable;
-import ru.bogdanov.view.gui.IntegerLabel;
+import ru.bogdanov.view.gui.item.ItemTable;
+import ru.bogdanov.view.gui.common.IntegerLabel;
 import ru.bogdanov.app.UICallback;
 
 import javax.swing.*;
@@ -13,7 +13,7 @@ public class TaskWindow implements UICallback {
     private JTextField urlTF;
     private JButton startBtn;
     private JButton stopBtn;
-    private ItemTable resultTable;
+    private ItemTable itemTable;
     private JLabel rowCountLbl;
     private JLabel progressLbl;
     private JProgressBar progress;
@@ -30,11 +30,6 @@ public class TaskWindow implements UICallback {
 
     @Override
     public void putTableData(String json) {
-
-    }
-
-    @Override
-    public void increaseCounter(Integer number) {
 
     }
 

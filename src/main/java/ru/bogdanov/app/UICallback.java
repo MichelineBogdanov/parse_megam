@@ -11,10 +11,7 @@ public interface UICallback {
 
     /**
      * Sets number to the main counter, replacing existing context. This method can be called from outside EDT.
-     *
-     * @param number number to set in counter
      */
-    void increaseCounter(Integer number);
     void increaseCounter();
 
     /**

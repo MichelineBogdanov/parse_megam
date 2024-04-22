@@ -126,7 +126,7 @@
         <properties/>
         <border type="none"/>
         <children>
-          <component id="78ff8" class="ru.bogdanov.view.gui.ItemTable" binding="resultTable">
+          <component id="78ff8" class="ru.bogdanov.view.gui.item.ItemTable" binding="itemTable">
             <constraints/>
             <properties/>
           </component>
@@ -167,7 +167,7 @@
               <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
           </hspacer>
-          <component id="699ea" class="ru.bogdanov.view.gui.IntegerLabel" binding="count">
+          <component id="699ea" class="ru.bogdanov.view.gui.common.IntegerLabel" binding="count">
             <constraints>
               <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
