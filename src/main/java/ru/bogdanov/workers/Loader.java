@@ -5,11 +5,16 @@ public interface Loader {
     /**
      * Performs parsing operation in new thread
      */
-    void execute();
+    void executeTask();
 
     /**
      * Cancels current operation
      */
     void stop();
+
+    /**
+     * Pause current task
+     */
+    void pause();
 
 }

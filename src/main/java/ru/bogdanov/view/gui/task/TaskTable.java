@@ -2,18 +2,23 @@ package ru.bogdanov.view.gui.task;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import ru.bogdanov.view.forms.TaskWindow;
 import ru.bogdanov.view.gui.common.ButtonColumn;
-import ru.bogdanov.workers.ParseLoader;
+import ru.bogdanov.workers.swing_worker.SWorkerParseLoader;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.event.ActionEvent;
 import java.util.ArrayList;
 import java.util.Vector;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class TaskTable extends JTable implements TaskQueueWorker {
 
-    ArrayList<ParseLoader> taskList = new ArrayList<>();
+    private ArrayList<SWorkerParseLoader> taskList = new ArrayList<>();
+
+    private ExecutorService executorService = null;
 
     private static final Logger LOG = LoggerFactory.getLogger(TaskTable.class);
 
@@ -23,7 +28,7 @@ public class TaskTable extends JTable implements TaskQueueWorker {
         add("Запустить");
         add("Остановить");
         add("Удалить");
-        add("Прогресс");
+        add("Статус");
     }};
 
     public TaskTable() {
@@ -56,20 +61,20 @@ public class TaskTable extends JTable implements TaskQueueWorker {
 
     @Override
     public void expand(ActionEvent e) {
-
+        TaskWindow taskWindow = new TaskWindow();
     }
 
     @Override
     public void start(ActionEvent e) {
         int modelRow = Integer.parseInt(e.getActionCommand());
-        ParseLoader task = taskList.get(modelRow);
-        task.execute();
+        SWorkerParseLoader task = taskList.get(modelRow);
+        task.executeTask();
     }
 
     @Override
     public void stop(ActionEvent e) {
         int modelRow = Integer.parseInt(e.getActionCommand());
-        ParseLoader task = taskList.get(modelRow);
+        SWorkerParseLoader task = taskList.get(modelRow);
         task.stop();
     }
 
@@ -78,27 +83,42 @@ public class TaskTable extends JTable implements TaskQueueWorker {
         JTable table = (JTable) e.getSource();
         int modelRow = Integer.parseInt(e.getActionCommand());
         ((DefaultTableModel) table.getModel()).removeRow(modelRow);
-        ParseLoader task = taskList.get(modelRow);
+        SWorkerParseLoader task = taskList.get(modelRow);
         task.stop();
         taskList.remove(modelRow);
     }
 
-    public void addTask(ParseLoader task) {
-        ((DefaultTableModel) (this.getModel())).addRow(new Object[]{"развернуть", task.getUrl(), "старт", "стоп", "удалить", null});
+    public synchronized void pauseTask() {
+        for (SWorkerParseLoader task : taskList) {
+            if (task.getState() == SwingWorker.StateValue.STARTED) {
+                task.pause();
+            }
+        }
+    }
+
+    public void addTask(SWorkerParseLoader task) {
+        ((DefaultTableModel) getModel()).addRow(new Object[]{"развернуть", task.getUrl(), "старт", "стоп", "удалить", task.getState()});
         taskList.add(task);
+        task.addPropertyChangeListener(evt -> {
+            if ("state".equals(evt.getPropertyName())) {
+                getModel().setValueAt(evt.getNewValue(), taskList.indexOf(task), 5);
+            }
+        });
     }
 
     public void startAll() {
-        for (ParseLoader parseLoader : taskList) {
-            parseLoader.execute();
+        this.executorService = Executors.newSingleThreadExecutor();
+        for (SWorkerParseLoader task : taskList) {
+            if (!task.isDone()) {
+                executorService.execute(task);
+            }
         }
         LOG.info("Парсинг начат!");
     }
 
     public void stopAll() {
-        for (ParseLoader parseLoader : taskList) {
-            parseLoader.stop();
-        }
-        LOG.info("Парсинг остановлен!");
+        this.executorService.shutdownNow();
+        LOG.info("Парсинг остановлен! Выполнено задач: " + this.executorService.toString());
+        executorService = Executors.newSingleThreadExecutor();
     }
 }

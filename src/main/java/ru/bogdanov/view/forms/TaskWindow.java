@@ -1,12 +1,14 @@
 package ru.bogdanov.view.forms;
 
+import ru.bogdanov.constants.Constants;
 import ru.bogdanov.view.gui.item.ItemTable;
 import ru.bogdanov.view.gui.common.IntegerLabel;
 import ru.bogdanov.app.UICallback;
 
 import javax.swing.*;
+import java.awt.*;
 
-public class TaskWindow implements UICallback {
+public class TaskWindow extends JFrame implements UICallback {
     private JPanel parent;
     private JPanel mainPanel;
     private JLabel urlLbl;
@@ -27,6 +29,15 @@ public class TaskWindow implements UICallback {
     private JToolBar toolBar;
     private JButton exportBtn;
     private JButton clearBtn;
+
+    public TaskWindow() {
+        setContentPane(parent);
+        setModalExclusionType(Dialog.ModalExclusionType.APPLICATION_EXCLUDE);
+        setTitle(Constants.TASK_WINDOW);
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+        setSize(new Dimension(800, 500));
+        setVisible(true);
+    }
 
     @Override
     public void putTableData(String json) {

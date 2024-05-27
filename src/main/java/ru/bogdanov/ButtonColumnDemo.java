@@ -1,9 +1,8 @@
 package ru.bogdanov;
-import ru.bogdanov.view.gui.ButtonColumn;
+import ru.bogdanov.view.gui.common.ButtonColumn;
 
 import java.awt.*;
 import java.awt.event.*;
-import java.util.*;
 import javax.swing.*;
 import javax.swing.table.*;
 public class ButtonColumnDemo

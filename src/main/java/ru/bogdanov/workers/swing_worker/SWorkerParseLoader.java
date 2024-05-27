@@ -1,4 +1,4 @@
-package ru.bogdanov.workers;
+package ru.bogdanov.workers.swing_worker;
 
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -14,55 +14,96 @@ import ru.bogdanov.app.UICallback;
 import ru.bogdanov.config.Config;
 import ru.bogdanov.constants.Constants;
 import ru.bogdanov.entity.BrowserFactory;
+import ru.bogdanov.workers.Loader;
 
+import javax.swing.*;
 import java.time.Duration;
-import java.util.Optional;
+import java.util.*;
 
-public class ParseLoader implements Runnable, Loader {
+public class SWorkerParseLoader extends SwingWorker<Void, String> implements Loader {
 
-    private static final Logger LOG = LoggerFactory.getLogger(ParseLoader.class);
+    private static final Logger LOG = LoggerFactory.getLogger(SWorkerParseLoader.class);
 
     private final BrowserFactory browserFactory = BrowserFactory.getFactory();
+
+    private final UICallback ui;
     private final Config config;
     private final String url;
-    private final UICallback ui;
-    private boolean canceled = false;
-    private boolean executed = false;
+    private final Date date = new Date();
 
-    public ParseLoader(Config config, String url, UICallback ui) {
+    private boolean isPause;
+    private final Object lock = new Object();
+
+    public SWorkerParseLoader(UICallback ui, Config config, String url) {
+        this.ui = ui;
         this.config = config;
         this.url = url;
-        this.ui = ui;
     }
 
     @Override
-    public void run() {
+    protected Void doInBackground() {
+        ChromeDriver browser = browserFactory.getBrowser();
+        DevTools devTools = browser.getDevTools();
         try {
-            ChromeDriver browser = browserFactory.getBrowser();
-            DevTools devTools = browser.getDevTools();
             devTools.createSession();
             devTools.send(Network.enable(Optional.empty(), Optional.empty(), Optional.empty()));
             devTools.addListener(Network.responseReceived(), responseReceived -> {
                 Response response = responseReceived.getResponse();
                 if (response.getUrl().equals(Constants.FETCH_REQUEST)) {
                     String body = devTools.send(Network.getResponseBody(responseReceived.getRequestId())).getBody();
-                    ui.putTableData(body);
+                    publish(body);
                 }
             });
             browser.get(url);
             Wait<WebDriver> wait = new WebDriverWait(browser, Duration.ofSeconds(20));
             setRegion(wait);
             String pagesCount = browser.findElement(By.className("catalog-header__count")).getText().replaceAll("\\D", "");
-            int pages = Integer.parseInt(pagesCount) / 44;
-            for (int i = 0; i < pages && !canceled; i++) {
-                ui.setProgress((100 * i / pages));
+            int pages = config.getPages() > 0 ? config.getPages() : Integer.parseInt(pagesCount) / 44;
+            for (int i = 0; i < pages && !isCancelled(); i++) {
+                synchronized (lock) {
+                    if (isPause) {
+                        lock.wait();
+                    }
+                }
+                setProgress(((100 * (i + 1)) / pages));
                 wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("li.next > a")));
-                Thread.sleep(3000);
+                int delay = new Random().nextInt(4000) + 3000;
+                Thread.sleep(delay);
                 ((JavascriptExecutor) browser).executeScript("document.querySelector(\"li.next > a\").click();");
             }
-            devTools.disconnectSession();
         } catch (InterruptedException e) {
             LOG.error("Ожидание не завершилось");
+        } finally {
+            browser.quit();
+        }
+        return null;
+    }
+
+    @Override
+    protected void process(List<String> chunks) {
+        chunks.forEach(s -> ui.putTableData(s));
+        ui.setProgress(getProgress());
+    }
+
+    @Override
+    public void executeTask() {
+        this.execute();
+    }
+
+    @Override
+    public void stop() {
+        cancel(true);
+    }
+
+    @Override
+    public void pause() {
+        synchronized (lock) {
+            if (isPause) {
+                isPause = false;
+                lock.notify();
+            } else {
+                isPause = true;
+            }
         }
     }
 
@@ -82,29 +123,20 @@ public class ParseLoader implements Runnable, Loader {
         wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("form > button"))).click();
     }
 
-    @Override
-    public synchronized void executeTask() {
-        if (executed) {
-            throw new IllegalStateException("Loader is already executed");
-        }
-        executed = true;
-        canceled = false;
-        Thread t = new Thread(this, "Custom loader thread");
-        t.start();
-    }
-
-    @Override
-    public synchronized void stop() {
-        canceled = true;
-        executed = false;
-    }
-
-    @Override
-    public void pause() {
-
-    }
-
     public String getUrl() {
         return url;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        SWorkerParseLoader that = (SWorkerParseLoader) o;
+        return Objects.equals(config, that.config) && Objects.equals(url, that.url) && Objects.equals(date, that.date);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(config, url, date);
     }
 }

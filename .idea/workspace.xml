@@ -9,25 +9,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="82fa0751-e309-474c-9184-102756ecb646" name="Changes" comment="Logic/Interface&#10;[+] - добавлены классы для работы с очередью задач&#10;[!] - в классы Приложения и Задач внесены соответствующие изменения для работы с очередью задач&#10;[!] - перекомпоновка пакетов&#10;[+] - добавлены иконки&#10;[-] - отказ от &quot;карточек задач&quot; и переход на менеджер в табличном представлении">
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/parse_megam_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/parse_megam_jar.xml" afterDir="false" />
+    <list default="true" id="82fa0751-e309-474c-9184-102756ecb646" name="Changes" comment="Logic/Interface&#10;[!] - добавлен валидатор URL при создании задачи&#10;[!] - переделаны классы для таблицы товаров&#10;[!] - перекомпоновка пакетов&#10;[!] - обновлена сборка">
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/bogdanov/workers/swing_worker/SWorkerParseLoader.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/parse_megam_jar/parse_megam.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/parse_megam_jar/parse_megam.jar" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/bogdanov/ButtonColumnDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/bogdanov/ButtonColumnDemo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/bogdanov/app/App.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/bogdanov/app/App.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/bogdanov/app/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/bogdanov/app/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/bogdanov/app/UICallback.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/bogdanov/app/UICallback.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/bogdanov/view/forms/TaskWindow.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/bogdanov/view/forms/TaskWindow.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/bogdanov/config/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/bogdanov/config/Config.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/bogdanov/config/SettingsDlg.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/bogdanov/config/SettingsDlg.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/bogdanov/config/SettingsDlg.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/bogdanov/config/SettingsDlg.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/bogdanov/constants/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/bogdanov/constants/Constants.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/bogdanov/view/forms/TaskWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/bogdanov/view/forms/TaskWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/bogdanov/view/gui/BeanTableModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/bogdanov/view/gui/common/BeanTableModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/bogdanov/view/gui/ButtonColumn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/bogdanov/view/gui/common/ButtonColumn.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/bogdanov/view/gui/IntegerLabel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/bogdanov/view/gui/common/IntegerLabel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/bogdanov/view/gui/ItemTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/bogdanov/view/gui/item/ItemTable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/bogdanov/view/gui/ItemTableModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/bogdanov/view/gui/item/ItemTableModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/bogdanov/view/gui/TaskQueueWorker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/bogdanov/view/gui/task/TaskQueueWorker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/bogdanov/view/gui/TaskTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/bogdanov/view/gui/task/TaskTable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/bogdanov/view/gui/URICellRenderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/bogdanov/view/gui/common/URICellRenderer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/bogdanov/view/gui/task/TaskQueueWorker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/bogdanov/view/gui/task/TaskQueueWorker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/bogdanov/view/gui/task/TaskTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/bogdanov/view/gui/task/TaskTable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/bogdanov/workers/Loader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/bogdanov/workers/Loader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/bogdanov/workers/ParseLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/bogdanov/workers/ParseLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TestTable.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestTable.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TestTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestTable.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,6 +37,7 @@
       <list>
         <option value="Interface" />
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -58,6 +57,7 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH&quot;: &quot;396&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/qqMik/IdeaProjects/parse_megam/out/artifacts/parse_megam_jar&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
@@ -88,7 +88,7 @@
       <module name="parse_megam" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ru.bogdanov.*" />
+          <option name="PATTERN" value="swing_worker.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -114,7 +114,7 @@
       <module name="parse_megam" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ru.bogdanov.*" />
+          <option name="PATTERN" value="swing_worker.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -127,7 +127,7 @@
       <module name="parse_megam" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ru.bogdanov.*" />
+          <option name="PATTERN" value="swing_worker.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -193,8 +193,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.ru.bogdanov.app.App" />
-        <item itemvalue="Application.ButtonColumnDemo" />
         <item itemvalue="Application.TestTable" />
+        <item itemvalue="Application.ButtonColumnDemo" />
         <item itemvalue="Application.Test" />
         <item itemvalue="Application.App" />
       </list>
@@ -360,7 +360,15 @@
       <option name="project" value="LOCAL" />
       <updated>1713729475746</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Logic/Interface&#10;[!] - добавлен валидатор URL при создании задачи&#10;[!] - переделаны классы для таблицы товаров&#10;[!] - перекомпоновка пакетов&#10;[!] - обновлена сборка">
+      <option name="closed" value="true" />
+      <created>1713816205334</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1713816205334</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -397,7 +405,8 @@
     <MESSAGE value="Logik&#10;[+] - добавлена функция экспорта данных в эксель" />
     <MESSAGE value="Refactoring" />
     <MESSAGE value="Logic/Interface&#10;[+] - добавлены классы для работы с очередью задач&#10;[!] - в классы Приложения и Задач внесены соответствующие изменения для работы с очередью задач&#10;[!] - перекомпоновка пакетов&#10;[+] - добавлены иконки&#10;[-] - отказ от &quot;карточек задач&quot; и переход на менеджер в табличном представлении" />
-    <option name="LAST_COMMIT_MESSAGE" value="Logic/Interface&#10;[+] - добавлены классы для работы с очередью задач&#10;[!] - в классы Приложения и Задач внесены соответствующие изменения для работы с очередью задач&#10;[!] - перекомпоновка пакетов&#10;[+] - добавлены иконки&#10;[-] - отказ от &quot;карточек задач&quot; и переход на менеджер в табличном представлении" />
+    <MESSAGE value="Logic/Interface&#10;[!] - добавлен валидатор URL при создании задачи&#10;[!] - переделаны классы для таблицы товаров&#10;[!] - перекомпоновка пакетов&#10;[!] - обновлена сборка" />
+    <option name="LAST_COMMIT_MESSAGE" value="Logic/Interface&#10;[!] - добавлен валидатор URL при создании задачи&#10;[!] - переделаны классы для таблицы товаров&#10;[!] - перекомпоновка пакетов&#10;[!] - обновлена сборка" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -418,9 +427,19 @@
           <option name="timeStamp" value="15" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/TestTable.java</url>
+          <line>42</line>
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/ru/bogdanov/view/gui/task/TaskTable.java</url>
-          <line>97</line>
-          <option name="timeStamp" value="18" />
+          <line>119</line>
+          <option name="timeStamp" value="26" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/ru/bogdanov/view/gui/task/TaskTable.java</url>
+          <line>92</line>
+          <option name="timeStamp" value="38" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

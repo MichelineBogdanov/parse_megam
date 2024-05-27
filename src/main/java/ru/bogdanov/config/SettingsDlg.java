@@ -21,6 +21,8 @@ public class SettingsDlg extends JDialog {
     private JPanel browserSettings;
     private JPanel itemSettings;
     private JTabbedPane settingsTabPane;
+    private JTextField pagesCountTF;
+    private JLabel pagesCountLbl;
 
     private Config config;
     private static final Logger LOG = LoggerFactory.getLogger(SettingsDlg.class);
@@ -40,6 +42,7 @@ public class SettingsDlg extends JDialog {
         this.config = config;
         fixAppCB.setSelected(config.isFixApp());
         openBrowserCB.setSelected(config.isOpenBrowser());
+        pagesCountTF.setText(String.valueOf(config.getPages()));
         saleTF.setText(String.valueOf(config.getSale()));
         rateTF.setText(String.valueOf(config.getRate()));
     }
@@ -48,6 +51,7 @@ public class SettingsDlg extends JDialog {
         try {
             config.setFixApp(fixAppCB.isSelected());
             config.setOpenBrowser(openBrowserCB.isSelected());
+            config.setPages(Integer.parseInt(pagesCountTF.getText()));
             config.setSale(Integer.parseInt(saleTF.getText()));
             config.setRate(Double.parseDouble(rateTF.getText()));
             LOG.info("Задана конфигурация: " + config.toString());

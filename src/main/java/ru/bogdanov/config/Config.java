@@ -5,6 +5,7 @@ public class Config {
     private boolean isFixApp;
     private boolean isOpenBrowser;
     private int sale = 0;
+    private int pages = 0;
     private double rate = 0;
 
     public Config() {
@@ -32,6 +33,14 @@ public class Config {
 
     public void setSale(int sale) {
         this.sale = sale;
+    }
+
+    public int getPages() {
+        return pages;
+    }
+
+    public void setPages(int pages) {
+        this.pages = pages;
     }
 
     public double getRate() {

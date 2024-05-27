@@ -12,7 +12,7 @@ import ru.bogdanov.export.ExcelExporter;
 import ru.bogdanov.view.gui.common.IntegerLabel;
 import ru.bogdanov.view.gui.item.ItemTable;
 import ru.bogdanov.view.gui.task.TaskTable;
-import ru.bogdanov.workers.ParseLoader;
+import ru.bogdanov.workers.swing_worker.SWorkerParseLoader;
 
 import javax.swing.*;
 import java.awt.*;
@@ -28,7 +28,6 @@ public class App extends JFrame implements UICallback {
     private JToolBar toolBar;
     private JPanel mainPanel;
     private ItemTable itemTable;
-    private JScrollPane itemTableScrollPanel;
     private JButton startBtn;
     private JButton exportBtn;
     private JButton stopBtn;
@@ -46,7 +45,9 @@ public class App extends JFrame implements UICallback {
     private JButton starBtn;
     private JButton pauseBtn;
     private TaskTable taskTable;
+    private JScrollPane itemScrollPane;
     private JScrollPane taskScrollPane;
+    private JSplitPane tableSplitPane;
     private JScrollPane testSP;
 
     private Config config = new Config();
@@ -66,19 +67,25 @@ public class App extends JFrame implements UICallback {
         clearBtn.addActionListener(e -> onClear());
         settingsBtn.addActionListener(e -> onSettings());
         startBtn.addActionListener(e -> startParsing());
+        pauseBtn.addActionListener(e -> onPause());
         stopBtn.addActionListener(e -> stopParsing());
         addTaskBtn.addActionListener(e -> createTask());
         this.setVisible(true);
         LOG.info("Приложение запустилось!");
     }
 
+    private void onPause() {
+        taskTable.pauseTask();
+    }
+
     private void createTask() {
         String urlTFText = urlTF.getText();
         try {
             new URL(urlTFText);
-            ParseLoader parseLoader = new ParseLoader(config, urlTFText, this);
+            SWorkerParseLoader parseLoader = new SWorkerParseLoader(this, config, urlTFText);
             taskTable.addTask(parseLoader);
             urlTF.setText(null);
+            LOG.info("Создана задача. Настройки : " + config);
         } catch (MalformedURLException e) {
             JOptionPane.showMessageDialog(this, "Введен невалидный URL\n" + urlTFText);
             LOG.error("Введен невалидный URL");
@@ -96,7 +103,6 @@ public class App extends JFrame implements UICallback {
 
     private void onClear() {
         itemTable.removeData();
-        itemTable.repaint();
         countLbl.setValue(0);
         progress.setValue(0);
     }
@@ -119,7 +125,7 @@ public class App extends JFrame implements UICallback {
                         (item.getPrice() * (100 - item.getBonusPercent())) / 100,
                         item.getRating(),
                         item.getGoods().getWebUrl()};
-                SwingUtilities.invokeLater(() -> itemTable.addRow(data));
+                itemTable.addRow(data);
                 increaseCounter();
             }
         }
@@ -127,20 +133,12 @@ public class App extends JFrame implements UICallback {
 
     @Override
     public void increaseCounter() {
-        if (SwingUtilities.isEventDispatchThread()) {
-            countLbl.increaseValue();
-        } else {
-            SwingUtilities.invokeLater(() -> countLbl.increaseValue());
-        }
+        countLbl.increaseValue();
     }
 
     @Override
     public void setProgress(int progressPercent) {
-        if (SwingUtilities.isEventDispatchThread()) {
-            progress.setValue(progressPercent);
-        } else {
-            SwingUtilities.invokeLater(() -> progress.setValue(progressPercent));
-        }
+        progress.setValue(progressPercent);
     }
 
     @Override

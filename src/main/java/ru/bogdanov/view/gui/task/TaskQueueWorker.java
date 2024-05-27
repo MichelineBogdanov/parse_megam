@@ -1,7 +1,5 @@
 package ru.bogdanov.view.gui.task;
 
-import org.w3c.dom.events.Event;
-
 import java.awt.event.ActionEvent;
 
 public interface TaskQueueWorker {
