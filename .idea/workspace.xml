@@ -9,23 +9,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="82fa0751-e309-474c-9184-102756ecb646" name="Changes" comment="Logic/Interface&#10;[!] - добавлен валидатор URL при создании задачи&#10;[!] - переделаны классы для таблицы товаров&#10;[!] - перекомпоновка пакетов&#10;[!] - обновлена сборка">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/bogdanov/workers/swing_worker/SWorkerParseLoader.java" afterDir="false" />
+    <list default="true" id="82fa0751-e309-474c-9184-102756ecb646" name="Changes" comment="Logic/Interface&#10;[!] - добавлена возможность поставить задачу на паузу&#10;[!] - добавлена возможность задать количество страниц&#10;[!] - добавлена возможность создания очереди задач">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/bogdanov/ButtonColumnDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/bogdanov/ButtonColumnDemo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/bogdanov/app/App.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/bogdanov/app/App.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/bogdanov/app/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/bogdanov/app/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/bogdanov/config/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/bogdanov/config/Config.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/bogdanov/config/SettingsDlg.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/bogdanov/config/SettingsDlg.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/bogdanov/config/SettingsDlg.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/bogdanov/config/SettingsDlg.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/bogdanov/constants/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/bogdanov/constants/Constants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/bogdanov/view/forms/TaskWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/bogdanov/view/forms/TaskWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/bogdanov/view/gui/task/TaskQueueWorker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/bogdanov/view/gui/task/TaskQueueWorker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/bogdanov/view/gui/common/ButtonColumn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/bogdanov/view/gui/common/ButtonColumn.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/bogdanov/view/gui/task/TaskTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/bogdanov/view/gui/task/TaskTable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/bogdanov/workers/Loader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/bogdanov/workers/Loader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/bogdanov/workers/ParseLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/bogdanov/workers/ParseLoader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/TestTable.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestTable.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/TestTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestTable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/bogdanov/workers/swing_worker/SWorkerParseLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/bogdanov/workers/swing_worker/SWorkerParseLoader.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -368,7 +358,15 @@
       <option name="project" value="LOCAL" />
       <updated>1713816205334</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Logic/Interface&#10;[!] - добавлена возможность поставить задачу на паузу&#10;[!] - добавлена возможность задать количество страниц&#10;[!] - добавлена возможность создания очереди задач">
+      <option name="closed" value="true" />
+      <created>1716802117708</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1716802117708</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -406,7 +404,8 @@
     <MESSAGE value="Refactoring" />
     <MESSAGE value="Logic/Interface&#10;[+] - добавлены классы для работы с очередью задач&#10;[!] - в классы Приложения и Задач внесены соответствующие изменения для работы с очередью задач&#10;[!] - перекомпоновка пакетов&#10;[+] - добавлены иконки&#10;[-] - отказ от &quot;карточек задач&quot; и переход на менеджер в табличном представлении" />
     <MESSAGE value="Logic/Interface&#10;[!] - добавлен валидатор URL при создании задачи&#10;[!] - переделаны классы для таблицы товаров&#10;[!] - перекомпоновка пакетов&#10;[!] - обновлена сборка" />
-    <option name="LAST_COMMIT_MESSAGE" value="Logic/Interface&#10;[!] - добавлен валидатор URL при создании задачи&#10;[!] - переделаны классы для таблицы товаров&#10;[!] - перекомпоновка пакетов&#10;[!] - обновлена сборка" />
+    <MESSAGE value="Logic/Interface&#10;[!] - добавлена возможность поставить задачу на паузу&#10;[!] - добавлена возможность задать количество страниц&#10;[!] - добавлена возможность создания очереди задач" />
+    <option name="LAST_COMMIT_MESSAGE" value="Logic/Interface&#10;[!] - добавлена возможность поставить задачу на паузу&#10;[!] - добавлена возможность задать количество страниц&#10;[!] - добавлена возможность создания очереди задач" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -433,13 +432,36 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/ru/bogdanov/view/gui/task/TaskTable.java</url>
-          <line>119</line>
+          <line>125</line>
           <option name="timeStamp" value="26" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/ru/bogdanov/view/gui/task/TaskTable.java</url>
-          <line>92</line>
+          <line>96</line>
           <option name="timeStamp" value="38" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/ru/bogdanov/view/gui/task/TaskTable.java</url>
+          <line>108</line>
+          <option name="timeStamp" value="39" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/ru/bogdanov/view/gui/task/TaskTable.java</url>
+          <line>103</line>
+          <option name="timeStamp" value="40" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/ru/bogdanov/workers/swing_worker/SWorkerParseLoader.java</url>
+          <line>131</line>
+          <properties>
+            <option name="lambda-ordinal" value="-1" />
+          </properties>
+          <option name="timeStamp" value="41" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/ru/bogdanov/view/gui/task/TaskTable.java</url>
+          <line>84</line>
+          <option name="timeStamp" value="42" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

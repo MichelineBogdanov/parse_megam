@@ -63,7 +63,6 @@ public class App extends JFrame implements UICallback {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setSize(new Dimension(800, 500));
         exportBtn.addActionListener(e -> onExport());
-        scheduleBtn.addActionListener(e -> onSchedule());
         clearBtn.addActionListener(e -> onClear());
         settingsBtn.addActionListener(e -> onSettings());
         startBtn.addActionListener(e -> startParsing());
@@ -95,10 +94,6 @@ public class App extends JFrame implements UICallback {
     private void onExport() {
         ExcelExporter excelExporter = new ExcelExporter(this);
         excelExporter.saveFile(itemTable);
-    }
-
-    private void onSchedule() {
-        System.out.println("TODO!!!");
     }
 
     private void onClear() {

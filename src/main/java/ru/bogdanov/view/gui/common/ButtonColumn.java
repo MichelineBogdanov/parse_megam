@@ -233,6 +233,14 @@ public class ButtonColumn extends AbstractCellEditor
         isButtonColumnEditor = false;
     }
 
+    public JButton getRenderButton() {
+        return renderButton;
+    }
+
+    public JButton getEditButton() {
+        return editButton;
+    }
+
     public void mouseClicked(MouseEvent e) {}
     public void mouseEntered(MouseEvent e) {}
     public void mouseExited(MouseEvent e) {}

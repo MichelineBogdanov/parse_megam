@@ -2,7 +2,6 @@ package ru.bogdanov.view.gui.task;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import ru.bogdanov.view.forms.TaskWindow;
 import ru.bogdanov.view.gui.common.ButtonColumn;
 import ru.bogdanov.workers.swing_worker.SWorkerParseLoader;
 
@@ -16,7 +15,7 @@ import java.util.concurrent.Executors;
 
 public class TaskTable extends JTable implements TaskQueueWorker {
 
-    private ArrayList<SWorkerParseLoader> taskList = new ArrayList<>();
+    private final ArrayList<SWorkerParseLoader> taskList = new ArrayList<>();
 
     private ExecutorService executorService = null;
 
@@ -53,7 +52,9 @@ public class TaskTable extends JTable implements TaskQueueWorker {
             }
         };
         this.setModel(new DefaultTableModel(header, 0));
-        new ButtonColumn(this, expandAction, 0);
+        ButtonColumn buttonColumn = new ButtonColumn(this, expandAction, 0);
+        buttonColumn.getRenderButton().setEnabled(false);
+        buttonColumn.getEditButton().setEnabled(false);
         new ButtonColumn(this, startAction, 2);
         new ButtonColumn(this, stopAction, 3);
         new ButtonColumn(this, deleteAction, 4);
@@ -61,7 +62,8 @@ public class TaskTable extends JTable implements TaskQueueWorker {
 
     @Override
     public void expand(ActionEvent e) {
-        TaskWindow taskWindow = new TaskWindow();
+        // TODO : доделать разворот на полный экран таски
+        //TaskWindow taskWindow = new TaskWindow();
     }
 
     @Override
@@ -82,10 +84,12 @@ public class TaskTable extends JTable implements TaskQueueWorker {
     public void delete(ActionEvent e) {
         JTable table = (JTable) e.getSource();
         int modelRow = Integer.parseInt(e.getActionCommand());
+        SWorkerParseLoader task = taskList.remove(modelRow);
         ((DefaultTableModel) table.getModel()).removeRow(modelRow);
-        SWorkerParseLoader task = taskList.get(modelRow);
-        task.stop();
-        taskList.remove(modelRow);
+        if (!task.isDone()) {
+            task.stop();
+        }
+        System.out.println("===");
     }
 
     public synchronized void pauseTask() {
@@ -101,7 +105,9 @@ public class TaskTable extends JTable implements TaskQueueWorker {
         taskList.add(task);
         task.addPropertyChangeListener(evt -> {
             if ("state".equals(evt.getPropertyName())) {
-                getModel().setValueAt(evt.getNewValue(), taskList.indexOf(task), 5);
+                if (taskList.contains(task)) {
+                    getModel().setValueAt(evt.getNewValue(), taskList.indexOf(task), 5);
+                }
             }
         });
     }

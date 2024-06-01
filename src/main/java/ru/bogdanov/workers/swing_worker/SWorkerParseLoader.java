@@ -81,7 +81,7 @@ public class SWorkerParseLoader extends SwingWorker<Void, String> implements Loa
 
     @Override
     protected void process(List<String> chunks) {
-        chunks.forEach(s -> ui.putTableData(s));
+        chunks.forEach(ui::putTableData);
         ui.setProgress(getProgress());
     }
 
