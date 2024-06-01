@@ -9,13 +9,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="82fa0751-e309-474c-9184-102756ecb646" name="Changes" comment="Logic/Interface&#10;[!] - добавлена возможность поставить задачу на паузу&#10;[!] - добавлена возможность задать количество страниц&#10;[!] - добавлена возможность создания очереди задач">
+    <list default="true" id="82fa0751-e309-474c-9184-102756ecb646" name="Changes" comment="Logic/Interface&#10;[!] - исправлена бага при удалении из очереди задач&#10;[!] - сделаны неактивными некоторые кнопки, которые надо будет доделать">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/bogdanov/app/App.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/bogdanov/app/App.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/bogdanov/app/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/bogdanov/app/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/bogdanov/view/gui/common/ButtonColumn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/bogdanov/view/gui/common/ButtonColumn.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/bogdanov/view/gui/task/TaskTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/bogdanov/view/gui/task/TaskTable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/bogdanov/workers/swing_worker/SWorkerParseLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/bogdanov/workers/swing_worker/SWorkerParseLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/bogdanov/config/SettingsDlg.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/bogdanov/config/SettingsDlg.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/bogdanov/config/SettingsDlg.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/bogdanov/config/SettingsDlg.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/export-16x16.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/export-16x16.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,24 +44,24 @@
     <option name="autoscrollToSource" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH&quot;: &quot;396&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/qqMik/IdeaProjects/parse_megam/out/artifacts/parse_megam_jar&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;project.propGUI&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "396",
+    "last_opened_file_path": "C:/Users/qqMik/IdeaProjects/parse_megam/src/main/resources",
+    "project.structure.last.edited": "Artifacts",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "project.propGUI"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="ru.bogdanov.view.gui" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\qqMik\IdeaProjects\parse_megam\out\artifacts\parse_megam_jar" />
       <recent name="C:\Users\qqMik\IdeaProjects\parse_megam\src\main\resources" />
+      <recent name="C:\Users\qqMik\IdeaProjects\parse_megam\out\artifacts\parse_megam_jar" />
       <recent name="C:\Users\aspire\IdeaProjects\parse_megam12\src\main\java\ru\bogdanov\config" />
       <recent name="C:\Users\qqMik\IdeaProjects\parse_megam\build" />
     </key>
@@ -366,7 +366,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716802117708</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Logic/Interface&#10;[!] - исправлена бага при удалении из очереди задач&#10;[!] - сделаны неактивными некоторые кнопки, которые надо будет доделать">
+      <option name="closed" value="true" />
+      <created>1717273885305</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1717273885305</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -405,7 +413,8 @@
     <MESSAGE value="Logic/Interface&#10;[+] - добавлены классы для работы с очередью задач&#10;[!] - в классы Приложения и Задач внесены соответствующие изменения для работы с очередью задач&#10;[!] - перекомпоновка пакетов&#10;[+] - добавлены иконки&#10;[-] - отказ от &quot;карточек задач&quot; и переход на менеджер в табличном представлении" />
     <MESSAGE value="Logic/Interface&#10;[!] - добавлен валидатор URL при создании задачи&#10;[!] - переделаны классы для таблицы товаров&#10;[!] - перекомпоновка пакетов&#10;[!] - обновлена сборка" />
     <MESSAGE value="Logic/Interface&#10;[!] - добавлена возможность поставить задачу на паузу&#10;[!] - добавлена возможность задать количество страниц&#10;[!] - добавлена возможность создания очереди задач" />
-    <option name="LAST_COMMIT_MESSAGE" value="Logic/Interface&#10;[!] - добавлена возможность поставить задачу на паузу&#10;[!] - добавлена возможность задать количество страниц&#10;[!] - добавлена возможность создания очереди задач" />
+    <MESSAGE value="Logic/Interface&#10;[!] - исправлена бага при удалении из очереди задач&#10;[!] - сделаны неактивными некоторые кнопки, которые надо будет доделать" />
+    <option name="LAST_COMMIT_MESSAGE" value="Logic/Interface&#10;[!] - исправлена бага при удалении из очереди задач&#10;[!] - сделаны неактивными некоторые кнопки, которые надо будет доделать" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

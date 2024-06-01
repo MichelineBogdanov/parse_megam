@@ -20,6 +20,8 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 
+import static javax.swing.SwingUtilities.updateComponentTreeUI;
+
 public class App extends JFrame implements UICallback {
 
     private JPanel parent;
@@ -54,6 +56,12 @@ public class App extends JFrame implements UICallback {
     private static final Logger LOG = LoggerFactory.getLogger(App.class);
 
     public static void main(String[] args) {
+        try {
+            UIManager.setLookAndFeel("javax.swing.plaf.nimbus.NimbusLookAndFeel");
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException |
+                 UnsupportedLookAndFeelException e) {
+            throw new RuntimeException(e);
+        }
         App app = new App();
     }
 

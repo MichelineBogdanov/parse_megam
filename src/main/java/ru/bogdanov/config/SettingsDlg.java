@@ -18,11 +18,11 @@ public class SettingsDlg extends JDialog {
     private JLabel rateLbl;
     private JButton saveBtn;
     private JPanel appSettings;
-    private JPanel browserSettings;
     private JPanel itemSettings;
     private JTabbedPane settingsTabPane;
     private JTextField pagesCountTF;
     private JLabel pagesCountLbl;
+    private JPanel browserSettings;
 
     private Config config;
     private static final Logger LOG = LoggerFactory.getLogger(SettingsDlg.class);

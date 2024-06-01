@@ -21,20 +21,16 @@
         <properties/>
         <border type="none"/>
         <children>
-          <component id="8fdb6" class="javax.swing.JButton" binding="exportBtn">
+          <component id="c40e3" class="javax.swing.JButton" binding="exportBtn">
             <constraints/>
             <properties>
-              <alignmentY value="0.5"/>
-              <horizontalTextPosition value="0"/>
               <icon value="export-16x16.png"/>
-              <iconTextGap value="1"/>
-              <label value=""/>
               <margin top="2" left="2" bottom="2" right="2"/>
               <maximumSize width="25" height="25"/>
               <minimumSize width="25" height="25"/>
               <preferredSize width="25" height="25"/>
               <text value=""/>
-              <toolTipText value="Выгрузить в Excel"/>
+              <toolTipText value="Очистить таблицу"/>
             </properties>
           </component>
           <component id="6baa9" class="javax.swing.JButton" binding="clearBtn">
@@ -44,6 +40,7 @@
               <margin top="2" left="2" bottom="2" right="2"/>
               <maximumSize width="25" height="25"/>
               <minimumSize width="25" height="25"/>
+              <preferredSize width="25" height="25"/>
               <text value=""/>
               <toolTipText value="Очистить таблицу"/>
             </properties>
