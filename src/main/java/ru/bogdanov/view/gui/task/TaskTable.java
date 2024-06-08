@@ -33,22 +33,26 @@ public class TaskTable extends JTable implements TaskQueueWorker {
     public TaskTable() {
         Action expandAction = new AbstractAction() {
             public void actionPerformed(ActionEvent e) {
-                expand(e);
+                int row = Integer.parseInt(e.getActionCommand());
+                expand(row);
             }
         };
         Action startAction = new AbstractAction() {
             public void actionPerformed(ActionEvent e) {
-                start(e);
+                int row = Integer.parseInt(e.getActionCommand());
+                start(row);
             }
         };
         Action stopAction = new AbstractAction() {
             public void actionPerformed(ActionEvent e) {
-                stop(e);
+                int row = Integer.parseInt(e.getActionCommand());
+                stop(row);
             }
         };
         Action deleteAction = new AbstractAction() {
             public void actionPerformed(ActionEvent e) {
-                delete(e);
+                int row = Integer.parseInt(e.getActionCommand());
+                delete(row);
             }
         };
         this.setModel(new DefaultTableModel(header, 0));
@@ -61,35 +65,30 @@ public class TaskTable extends JTable implements TaskQueueWorker {
     }
 
     @Override
-    public void expand(ActionEvent e) {
+    public void expand(int row) {
         // TODO : доделать разворот на полный экран таски
         //TaskWindow taskWindow = new TaskWindow();
     }
 
     @Override
-    public void start(ActionEvent e) {
-        int modelRow = Integer.parseInt(e.getActionCommand());
-        SWorkerParseLoader task = taskList.get(modelRow);
+    public void start(int row) {
+        SWorkerParseLoader task = taskList.get(row);
         task.executeTask();
     }
 
     @Override
-    public void stop(ActionEvent e) {
-        int modelRow = Integer.parseInt(e.getActionCommand());
-        SWorkerParseLoader task = taskList.get(modelRow);
+    public void stop(int row) {
+        SWorkerParseLoader task = taskList.get(row);
         task.stop();
     }
 
     @Override
-    public void delete(ActionEvent e) {
-        JTable table = (JTable) e.getSource();
-        int modelRow = Integer.parseInt(e.getActionCommand());
-        SWorkerParseLoader task = taskList.remove(modelRow);
-        ((DefaultTableModel) table.getModel()).removeRow(modelRow);
-        if (!task.isDone()) {
+    public void delete(int row) {
+        ((DefaultTableModel) this.getModel()).removeRow(row);
+        SWorkerParseLoader task = taskList.remove(row);
+        if (task.getState() == SwingWorker.StateValue.STARTED) {
             task.stop();
         }
-        System.out.println("===");
     }
 
     public synchronized void pauseTask() {
@@ -105,9 +104,7 @@ public class TaskTable extends JTable implements TaskQueueWorker {
         taskList.add(task);
         task.addPropertyChangeListener(evt -> {
             if ("state".equals(evt.getPropertyName())) {
-                if (taskList.contains(task)) {
-                    getModel().setValueAt(evt.getNewValue(), taskList.indexOf(task), 5);
-                }
+                this.getModel().setValueAt(evt.getNewValue(), taskList.indexOf(task), 5);
             }
         });
     }
@@ -115,7 +112,7 @@ public class TaskTable extends JTable implements TaskQueueWorker {
     public void startAll() {
         this.executorService = Executors.newSingleThreadExecutor();
         for (SWorkerParseLoader task : taskList) {
-            if (!task.isDone()) {
+            if (task.getState() == SwingWorker.StateValue.PENDING) {
                 executorService.execute(task);
             }
         }
@@ -123,8 +120,22 @@ public class TaskTable extends JTable implements TaskQueueWorker {
     }
 
     public void stopAll() {
+        for (SWorkerParseLoader task : taskList) {
+            if (task.getState() == SwingWorker.StateValue.PENDING || task.getState() == SwingWorker.StateValue.STARTED) {
+                task.stop();
+            }
+        }
         this.executorService.shutdownNow();
         LOG.info("Парсинг остановлен! Выполнено задач: " + this.executorService.toString());
         executorService = Executors.newSingleThreadExecutor();
+    }
+
+    public void refreshTasks() {
+        for (int i = 0; i < taskList.size(); i++) {
+            SWorkerParseLoader task = taskList.get(0);
+            SWorkerParseLoader newTask = new SWorkerParseLoader(task.getUi(), task.getConfig(), task.getUrl());
+            this.delete(0);
+            this.addTask(newTask);
+        }
     }
 }

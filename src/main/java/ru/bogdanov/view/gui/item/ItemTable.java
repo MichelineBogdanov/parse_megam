@@ -5,8 +5,6 @@ import org.slf4j.LoggerFactory;
 import ru.bogdanov.view.gui.common.URICellRenderer;
 
 import javax.swing.*;
-import javax.swing.table.DefaultTableModel;
-import javax.swing.table.TableModel;
 import javax.swing.table.TableRowSorter;
 import java.awt.*;
 import java.awt.event.MouseAdapter;

@@ -10,6 +10,7 @@ public class TestTable extends JFrame {
     private JPanel parentPanel;
     private JScrollPane tablePanel;
     private JButton startButton;
+    private JButton deleteButton;
 
     public static final Vector<String> HEADER = new Vector<>() {{
         add("TEST_HEADER_1");

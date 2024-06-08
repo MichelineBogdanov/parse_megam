@@ -1,15 +1,13 @@
 package ru.bogdanov.view.gui.task;
 
-import java.awt.event.ActionEvent;
-
 public interface TaskQueueWorker {
 
-    void expand(ActionEvent e);
+    void expand(int row);
 
-    void start(ActionEvent e);
+    void start(int row);
 
-    void stop(ActionEvent e);
+    void stop(int row);
 
-    void delete(ActionEvent e);
+    void delete(int row);
 
 }

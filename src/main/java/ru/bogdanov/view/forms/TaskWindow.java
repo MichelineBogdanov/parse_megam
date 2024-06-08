@@ -1,9 +1,9 @@
 package ru.bogdanov.view.forms;
 
-import ru.bogdanov.constants.Constants;
-import ru.bogdanov.view.gui.item.ItemTable;
-import ru.bogdanov.view.gui.common.IntegerLabel;
 import ru.bogdanov.app.UICallback;
+import ru.bogdanov.constants.Constants;
+import ru.bogdanov.view.gui.common.IntegerLabel;
+import ru.bogdanov.view.gui.item.ItemTable;
 
 import javax.swing.*;
 import java.awt.*;

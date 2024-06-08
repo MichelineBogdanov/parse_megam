@@ -127,6 +127,14 @@ public class SWorkerParseLoader extends SwingWorker<Void, String> implements Loa
         return url;
     }
 
+    public UICallback getUi() {
+        return ui;
+    }
+
+    public Config getConfig() {
+        return config;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

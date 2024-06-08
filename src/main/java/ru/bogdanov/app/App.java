@@ -20,8 +20,6 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 
-import static javax.swing.SwingUtilities.updateComponentTreeUI;
-
 public class App extends JFrame implements UICallback {
 
     private JPanel parent;
@@ -50,6 +48,7 @@ public class App extends JFrame implements UICallback {
     private JScrollPane itemScrollPane;
     private JScrollPane taskScrollPane;
     private JSplitPane tableSplitPane;
+    private JButton refreshBtn;
     private JScrollPane testSP;
 
     private Config config = new Config();
@@ -76,9 +75,14 @@ public class App extends JFrame implements UICallback {
         startBtn.addActionListener(e -> startParsing());
         pauseBtn.addActionListener(e -> onPause());
         stopBtn.addActionListener(e -> stopParsing());
+        refreshBtn.addActionListener(e -> onRefresh());
         addTaskBtn.addActionListener(e -> createTask());
         this.setVisible(true);
         LOG.info("Приложение запустилось!");
+    }
+
+    private void onRefresh() {
+        taskTable.refreshTasks();
     }
 
     private void onPause() {
