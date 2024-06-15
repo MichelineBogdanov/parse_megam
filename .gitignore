@@ -36,3 +36,11 @@ build/
 
 ### Mac OS ###
 .DS_Store
+/out/
+/src/main/resources/META-INF/MANIFEST.MF
+/slf4jlogbackexample.2024-06-01.log
+/slf4jlogbackexample.2024-06-02.log
+/slf4jlogbackexample.2024-06-04.log
+/slf4jlogbackexample.log
+/src/main/java/ru/bogdanov/Test.java
+/src/test/
