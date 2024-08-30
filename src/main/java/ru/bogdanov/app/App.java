@@ -115,7 +115,7 @@ public class App extends JFrame implements UICallback {
     }
 
     private void onSettings() {
-        SettingsDlg settingsDlg = new SettingsDlg(config);
+        SettingsDlg settingsDlg = new SettingsDlg();
         config = settingsDlg.getConfig();
     }
 

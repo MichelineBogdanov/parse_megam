@@ -25,15 +25,17 @@ public class SettingsDlg extends JDialog {
     private JPanel browserSettings;
 
     private Config config;
+    private final SettingsExporter configDealer = new SettingsExporter();
     private static final Logger LOG = LoggerFactory.getLogger(SettingsDlg.class);
 
-    public SettingsDlg(Config config) {
+    public SettingsDlg() {
         setModal(true);
         setContentPane(parent);
         setTitle(Constants.SETTINGS_TITLE);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setSize(new Dimension(800, 400));
         saveBtn.addActionListener(e -> onSaveSettings());
+        config = configDealer.loadConfig();
         setConfigToIU(config);
         setVisible(true);
     }
@@ -54,6 +56,7 @@ public class SettingsDlg extends JDialog {
             config.setPages(Integer.parseInt(pagesCountTF.getText()));
             config.setSale(Integer.parseInt(saleTF.getText()));
             config.setRate(Double.parseDouble(rateTF.getText()));
+            configDealer.saveConfig(config);
             LOG.info("Задана конфигурация: " + config.toString());
             this.dispose();
         } catch (NumberFormatException e) {
