@@ -26,17 +26,13 @@ public class SettingsExporter {
         }
     }
 
-    public static void main(String[] args) {
-        System.out.println(path);
-    }
-
     public SettingsExporter() {
     }
 
     public void saveConfig(Config config) {
         try (FileWriter writer = new FileWriter(path)) {
             Gson gson = new GsonBuilder().setPrettyPrinting().create();
-            gson.toJson(config, Config.class, writer);
+            gson.toJson(config, writer);
             writer.flush();
         } catch (IOException e) {
             LOG.error("Ошибка записи json конфигурации файла");
@@ -49,7 +45,7 @@ public class SettingsExporter {
                 Gson gson = new GsonBuilder().setPrettyPrinting().create();
                 return gson.fromJson(reader, Config.class);
             } catch (IOException e) {
-                LOG.error("Ошибка записи json конфигурации файла");
+                LOG.error("Не удалось прочитать файл конфигурации");
             }
         }
         return new Config();
