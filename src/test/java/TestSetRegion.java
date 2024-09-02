@@ -8,7 +8,7 @@ import java.util.Map;
 
 public class TestSetRegion {
 
-    private static String SCRIPT = """
+    /*private static String SCRIPT = """
             window.navigator.geolocation.getCurrentPosition = function(success) {
             var position = {
                 "coords": {
@@ -40,7 +40,7 @@ public class TestSetRegion {
 
 
         driver.get("https://megamarket.ru/");
-    }
+    }*/
 
 
 }

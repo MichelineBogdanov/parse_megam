@@ -6,7 +6,7 @@ import java.util.Vector;
 
 public class TestTable extends JFrame {
 
-    private JTable table;
+    /*private JTable table;
     private JPanel parentPanel;
     private JScrollPane tablePanel;
     private JButton startButton;
@@ -47,5 +47,5 @@ public class TestTable extends JFrame {
                 throw new RuntimeException(exception);
             }
         }
-    }
+    }*/
 }

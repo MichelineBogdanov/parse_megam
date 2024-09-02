@@ -7,6 +7,7 @@ import java.lang.reflect.Field;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Vector;
+import java.util.stream.Collectors;
 
 public class BeanTableModel<T> extends DefaultTableModel {
 
@@ -15,8 +16,7 @@ public class BeanTableModel<T> extends DefaultTableModel {
     public BeanTableModel(Class<T> type) {
         this.type = type;
         Field[] fields = type.getDeclaredFields();
-        List<String> list = Arrays.stream(fields).map(Field::getName).toList();
-        this.columnIdentifiers = new Vector<>(list);
+        this.columnIdentifiers = Arrays.stream(fields).map(Field::getName).collect(Collectors.toCollection(Vector::new));
     }
 
     @Override
@@ -31,7 +31,7 @@ public class BeanTableModel<T> extends DefaultTableModel {
         List<String> list = Arrays.stream(fields)
                 .flatMap(f -> Arrays.stream(f.getType().getDeclaredFields()))
                 .map(Field::getName)
-                .toList();
+                .collect(Collectors.toList());
         list.forEach(System.out::println);
         return res;
     }
@@ -45,7 +45,7 @@ public class BeanTableModel<T> extends DefaultTableModel {
                         throw new RuntimeException(e);
                     }
                 })
-                .toList();
+                .collect(Collectors.toList());
         addRow(new Vector<>(list));
     }
 
